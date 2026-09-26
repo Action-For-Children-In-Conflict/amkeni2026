@@ -30,7 +30,7 @@ class Index extends Component
     public function render()
     {
         return view('livewire.tags.index', [
-            'tags' => Tag::where('name', 'like', '%' . $this->search . '%')
+            'tags' => Tag::where('title', 'like', '%' . $this->search . '%')
                 ->withCount('programs')
                 ->latest()
                 ->paginate(10),
