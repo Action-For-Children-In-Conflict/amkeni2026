@@ -13,7 +13,7 @@ class Create extends Component
     public function save()
     {
         $this->validate([
-            'title' => 'required|string|max:255|unique:tags,name',
+            'title' => 'required|string|max:255|unique:tags,title',
         ]);
 
         Tag::create([
@@ -22,6 +22,7 @@ class Create extends Component
         ]);
 
         session()->flash('message', __('Tag created successfully.'));
+
         return redirect()->route('admin.tags.index');
     }
 

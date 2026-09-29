@@ -84,7 +84,7 @@
                     }
                 });">
                     <div x-ref="editor"
-                        class="min-h-[300px] bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 rounded-md border border-zinc-200 dark:border-zinc-700 shadow-sm">
+                        class="min-h-[300px] bg-white dark:bg-zinc-100 text-zinc-900 dark:text-zinc-50 rounded-md border border-zinc-200 dark:border-zinc-700 shadow-sm">
                     </div>
                 </div>
 
