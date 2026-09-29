@@ -13,15 +13,19 @@ class Edit extends Component
     use WithFileUploads;
 
     public Testmonial $testmonial;
+
     public $name = '';
+
     public $position = '';
+
     public $content = '';
+
     public $image;
 
     protected $rules = [
         'name' => 'required|min:3|max:255',
         'position' => 'required|min:3|max:100',
-        'content' => 'required|min:20|max:1000',
+        'content' => 'required',
         'image' => 'nullable|image|mimes:jpeg,jpg,png,webp|max:10240',
     ];
 

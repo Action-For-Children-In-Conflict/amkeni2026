@@ -13,14 +13,17 @@ class Create extends Component
     use WithFileUploads;
 
     public $name = '';
+
     public $position = '';
+
     public $content = '';
+
     public $image;
 
     protected $rules = [
         'name' => 'required|min:3|max:255',
         'position' => 'required|min:3|max:100',
-        'content' => 'required|min:20|max:1000',
+        'content' => 'required',
         'image' => 'required|image|max:10240',
     ];
 

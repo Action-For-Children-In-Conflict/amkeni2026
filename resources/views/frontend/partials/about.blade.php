@@ -2,10 +2,10 @@
 <section class="section-pad pt-4 section-tint-blue" id="about">
     <div class="container container-narrow">
         <div class="section-head">
+            <span class="section-eyebrow">About AfCiC</span>
+            <h2>A child protection organisation rooted in one town</h2>
             <hr class="rule">
-            <h2>A child protection organisation rooted in one town.</h2>
-            <p>For over two decades AfCiC has worked from Thika outward — rescuing children from the street, keeping
-                girls in school, and helping families build an income that lasts.</p>
+            <p>For over two decades AfCiC has worked from Thika outward — rescuing children from the street, keeping girls in school, and helping families build an income that lasts.</p>
         </div>
         <div class="row g-4">
             <div class="col-md-4">

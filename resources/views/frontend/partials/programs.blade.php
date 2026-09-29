@@ -2,26 +2,33 @@
 <section class="section-pad focus-section" id="focus">
     <div class="container container-narrow">
         <div class="section-head">
-            <hr class="rule">
+            <span class="section-eyebrow">Our Focus Areas</span>
             <h2>Four areas, one goal</h2>
-            <p>Systemic problems need connected solutions — this is where we put our energy.</p>
+            <hr class="rule">
+            <p>Systemic problems need connected solutions — this is where we direct our energy and resources to create lasting change.</p>
         </div>
         <div class="row g-4">
-            <div class="col-md-6 col-lg-3">
-                <div class="focus-card">
-                    <div class="focus-img"
-                        style="background-image:url('https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=800&auto=format&fit=crop');">
+            @foreach ($programs as $program)
+                <div class="col-md-6 col-lg-3">
+                    
+                    <div class="focus-card">
+                        <div class="focus-img"
+                            style="background-image:url('{{ $program->image_url }}');">
+                        </div>
+                        <div class="focus-body">
+                          {{--   <span class="focus-tag">Ch</span> --}}
+                            <h3>{{$program->title}}</h3>
+                            <p>{!! Str::limit($program->description, 100) !!}.</p>
+                            <a href="focus-child-protection.html" class="focus-link">Read more</a>
+                        </div>
                     </div>
-                    <div class="focus-body">
-                        <span class="focus-tag">Child protection</span>
-                        <h3>Safety first</h3>
-                        <p>Rescuing children from violence, exploitation and neglect, and promoting positive parenting
-                            in the community.</p>
-                        <a href="focus-child-protection.html" class="focus-link">Read more</a>
-                    </div>
+                   
                 </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
+               @endforeach
+              {{--   <span class="text-gray-500">No programs available at the moment.</span> --}}
+           
+
+            {{-- <div class="col-md-6 col-lg-3">
                 <div class="focus-card">
                     <div class="focus-img"
                         style="background-image:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop');">
@@ -61,7 +68,7 @@
                         <a href="focus-climate-change.html" class="focus-link">Read more</a>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </section>

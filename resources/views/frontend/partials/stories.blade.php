@@ -2,23 +2,26 @@
 <section class="section-pad focus-section" id="stories">
     <div class="container container-narrow">
         <div class="section-head">
-            <hr class="rule">
+            <span class="section-eyebrow">Stories of Transformation</span>
             <h2>Turning adversity into opportunity</h2>
-            <p>Three of the young people whose stories changed course through this work.</p>
+            <hr class="rule">
+            <p>Real stories of courage, resilience, and hope from young people whose lives changed course through our programmes.</p>
         </div>
         <div class="row g-4">
-            <div class="col-md-4">
-                <div class="story-card">
-                    <div class="story-img-wrap"><img
-                            src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop"
-                            alt="Portrait representing a young person"></div>
-                    <h4>A second chance for Alex</h4>
-                    <p>A 15-year-old from Murang'a moves past a childhood marked by poverty toward a steadier future.
-                    </p>
-                    <a href="story-alex.html" class="story-link">Read the story →</a>
+            @foreach ($testmonialstories as $testimonial)
+                <div class="col-md-4">
+                    <div class="story-card">
+                        <div class="story-img-wrap"><img
+                                src="{{ $testimonial->image }}"
+                                alt="Portrait representing a young person"></div>
+                        <h4>{{ $testimonial->position }}</h4>
+                        <p>{!! Str::limit(strip_tags($testimonial->name), 110) . '...' !!}</p>
+                        <a href="story-alex.html" class="story-link">Read the story →</a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4">
+            @endforeach
+          
+           {{--  <div class="col-md-4">
                 <div class="story-card">
                     <div class="story-img-wrap"><img
                             src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=800&auto=format&fit=crop"
@@ -37,7 +40,7 @@
                     <p>A 22-year-old from Thika shows what a single well-placed programme can change.</p>
                     <a href="story-nelly.html" class="story-link">Read the story →</a>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </section>
