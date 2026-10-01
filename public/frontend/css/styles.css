@@ -1008,6 +1008,23 @@
     font-weight: 500;
   }
 
+  .partner-cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--blue-deep);
+    border-bottom: 2px solid var(--orange);
+    padding-bottom: 2px;
+    transition: color 0.25s ease, border-color 0.25s ease;
+  }
+
+  .partner-cta-link:hover {
+    color: var(--orange-deep);
+    border-color: var(--orange-deep);
+  }
+
   /* ---------- NEWS & ARTICLES SLIDER ---------- */
   .news-slider {
     background: linear-gradient(155deg, rgba(242, 240, 234, .75) 0%, rgba(255, 145, 77, .07) 50%, rgba(242, 240, 234, .75) 100%);
