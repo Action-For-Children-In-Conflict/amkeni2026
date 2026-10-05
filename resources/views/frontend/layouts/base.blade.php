@@ -15,9 +15,9 @@
         href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- Bootstrap 5 -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Bootstrap 5 -->
+    <link href="{{ asset('frontend/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('frontend/css/styles.css') }}">
     {{-- custom css  --}}
 
@@ -139,7 +139,8 @@
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('frontend/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+     
     <script>
         // Count-up animation for stat figures, triggered once each enters view.
         (function() {

@@ -9,14 +9,14 @@
         </div>
         <div class="row g-4">
             @foreach ($testmonialstories as $testimonial)
-                <div class="col-md-4">
+                <div class="col-md-4 h-100">
                     <div class="story-card">
                         <div class="story-img-wrap"><img
                                 src="{{ $testimonial->image }}"
                                 alt="Portrait representing a young person"></div>
                         <h4>{{ $testimonial->position }}</h4>
                         <p>{!! Str::limit(strip_tags($testimonial->name), 110) . '...' !!}</p>
-                        <a href="story-alex.html" class="story-link">Read the story →</a>
+                        <a href="{{ route('frontend.stories', $testimonial->slug) }}" class="story-link">Read the story →</a>
                     </div>
                 </div>
             @endforeach

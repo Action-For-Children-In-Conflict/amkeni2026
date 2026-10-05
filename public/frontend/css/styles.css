@@ -73,6 +73,21 @@
     color: var(--orange);
   }
 
+  /* ---- Toggler (hamburger) ---- */
+  .navbar-afcic .navbar-toggler {
+    border: 1px solid rgba(0, 0, 0, .15);
+    padding: .4rem .65rem;
+  }
+
+  .navbar-afcic .navbar-toggler:focus {
+    box-shadow: 0 0 0 .2rem rgba(var(--orange), .25);
+    outline: none;
+  }
+
+  .navbar-afcic .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
   .navbar-afcic .nav-link {
     font-weight: 500;
     color: var(--ink);
@@ -88,6 +103,7 @@
   .navbar-afcic .dropdown-toggle::after {
     margin-left: .4em;
     vertical-align: .15em;
+    transition: transform .25s ease;
   }
 
   .navbar-afcic .dropdown-menu {
@@ -111,8 +127,44 @@
     color: var(--orange-deep);
   }
 
-  @media (min-width:992px) {
-    .navbar-afcic .nav-item.dropdown:hover .dropdown-menu {
+  /* ---- Mobile (< 992px) ---- */
+  @media (max-width: 991.98px) {
+    .navbar-afcic .navbar-collapse {
+      padding-top: .75rem;
+    }
+
+    .navbar-afcic .nav-link {
+      margin: 0;
+      padding: .6rem 0 !important;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .navbar-afcic .nav-link:hover {
+      border-bottom: 1px solid var(--orange);
+    }
+
+    .navbar-afcic .dropdown-menu {
+      border-top: none;
+      box-shadow: none;
+      margin-top: 0;
+      padding-left: 1rem;
+      background: transparent;
+    }
+
+    .navbar-afcic .dropdown-item {
+      padding: .45rem 1rem;
+      font-size: .9rem;
+    }
+
+    /* Rotate caret when open */
+    .navbar-afcic .nav-item.dropdown.show .dropdown-toggle::after {
+      transform: rotate(180deg);
+    }
+  }
+
+  /* ---- Desktop (>= 992px): hover to open ---- */
+  @media (min-width: 992px) {
+    .navbar-afcic .nav-item.dropdown:hover > .dropdown-menu {
       display: block;
     }
   }
@@ -674,7 +726,10 @@
   /* ---------- STORIES ---------- */
   .story-card {
     background: var(--paper);
-    padding-bottom: .25rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     transition: transform .35s ease, box-shadow .35s ease;
   }
 
@@ -702,27 +757,36 @@
   .story-card h4 {
     font-size: 1.1rem;
     margin: 1rem 0 .5rem;
-    padding: 0 .25rem;
+    padding: 0 .75rem;
   }
 
   .story-card p {
     color: #4b5563;
     font-size: .92rem;
-    padding: 0 .25rem;
+    padding: 0 .75rem;
+    flex-grow: 1;
   }
 
   .story-card .story-link {
-    color: var(--blue-deep);
+    display: inline-block;
+    margin: .75rem .75rem .25rem;
+    padding: .55rem 1.25rem;
+    background: var(--blue-deep);
+    color: #fff;
     font-weight: 600;
     font-size: .9rem;
-    display: inline-block;
-    margin: 0 0 .25rem .25rem;
-    transition: color .3s ease, transform .3s ease;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    transition: background .3s ease, transform .3s ease, box-shadow .3s ease;
+    align-self: flex-start;
   }
 
-  .story-card:hover .story-link {
-    color: var(--orange-deep);
-    transform: translateX(4px);
+  .story-card .story-link:hover {
+    background: var(--orange-deep);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+    color: #fff;
   }
 
   /* ---------- VIDEO SLIDER ---------- */

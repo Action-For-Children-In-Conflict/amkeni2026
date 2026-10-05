@@ -1,676 +1,696 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Action for Children in Conflict (AfCiC) — Thika, Kenya</title>
-<meta name="description" content="AfCiC protects and empowers children and vulnerable families in Thika, Kenya through child protection, education, women's empowerment and climate action.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Action for Children in Conflict (AfCiC) — Thika, Kenya</title>
+    <meta name="description" content="AfCiC protects and empowers children and vulnerable families in Thika, Kenya through child protection, education, women's empowerment and climate action.">
 
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- Bootstrap 5 -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('frontend/boostrap/bootstrap.min.css') }}" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<!-- ================= NAVBAR ================= -->
-<nav class="navbar navbar-expand-lg navbar-afcic sticky-top">
-  <div class="container container-narrow">
-    <a class="navbar-brand" href="#">AfCi<span>C</span></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar navbar-expand-lg navbar-afcic sticky-top">
+        <div class="container container-narrow">
+            <a class="navbar-brand" href="#">AfCi<span>C</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navMain">
-      <ul class="navbar-nav ms-auto align-items-lg-center">
+            <div class="collapse navbar-collapse" id="navMain">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#about" role="button" data-bs-toggle="dropdown" aria-expanded="false">About Us</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#about">About Us</a></li>
-            <li><a class="dropdown-item" href="#">Our Team</a></li>
-            <li><a class="dropdown-item" href="#partners">Our Partners</a></li>
-            <li><a class="dropdown-item" href="#contact">Our Location</a></li>
-          </ul>
-        </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#about" role="button" data-bs-toggle="dropdown" aria-expanded="false">About Us</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#about">About Us</a></li>
+                            <li><a class="dropdown-item" href="#">Our Team</a></li>
+                            <li><a class="dropdown-item" href="#partners">Our Partners</a></li>
+                            <li><a class="dropdown-item" href="#contact">Our Location</a></li>
+                        </ul>
+                    </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#focus" role="button" data-bs-toggle="dropdown" aria-expanded="false">Our Focus Areas</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="focus-child-protection.html">Child Protection</a></li>
-            <li><a class="dropdown-item" href="focus-education-empowerment.html">Education Empowerment</a></li>
-            <li><a class="dropdown-item" href="focus-womens-empowerment.html">Women's Empowerment</a></li>
-            <li><a class="dropdown-item" href="focus-climate-change.html">Climate Change</a></li>
-          </ul>
-        </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#focus" role="button" data-bs-toggle="dropdown" aria-expanded="false">Our Focus Areas</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="focus-child-protection.html">Child Protection</a></li>
+                            <li><a class="dropdown-item" href="focus-education-empowerment.html">Education Empowerment</a></li>
+                            <li><a class="dropdown-item" href="focus-womens-empowerment.html">Women's Empowerment</a></li>
+                            <li><a class="dropdown-item" href="focus-climate-change.html">Climate Change</a></li>
+                        </ul>
+                    </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#centers" role="button" data-bs-toggle="dropdown" aria-expanded="false">Our Centers</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="center-trc.html">Temporary Rescue Center</a></li>
-            <li><a class="dropdown-item" href="center-wcc.html">Working Children Center</a></li>
-          </ul>
-        </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#centers" role="button" data-bs-toggle="dropdown" aria-expanded="false">Our Centers</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="center-trc.html">Temporary Rescue Center</a></li>
+                            <li><a class="dropdown-item" href="center-wcc.html">Working Children Center</a></li>
+                        </ul>
+                    </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#stories" role="button" data-bs-toggle="dropdown" aria-expanded="false">Be Informed</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#stories">Success Stories</a></li>
-            <li><a class="dropdown-item" href="#news">Events</a></li>
-            <li><a class="dropdown-item" href="#news">Reports</a></li>
-            <li><a class="dropdown-item" href="#news">Blog</a></li>
-          </ul>
-        </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#stories" role="button" data-bs-toggle="dropdown" aria-expanded="false">Be Informed</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#stories">Success Stories</a></li>
+                            <li><a class="dropdown-item" href="#news">Events</a></li>
+                            <li><a class="dropdown-item" href="#news">Reports</a></li>
+                            <li><a class="dropdown-item" href="#news">Blog</a></li>
+                        </ul>
+                    </li>
 
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        <li class="nav-item ms-lg-3 mt-2 mt-lg-0"><a class="btn-donate" href="#donate">Donate</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- ================= HERO CAROUSEL ================= -->
-<header class="hero-carousel">
-  <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
-
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-
-    <div class="carousel-inner">
-
-      <div class="carousel-item active" style="background-image:url('https://images.unsplash.com/photo-1497231928782-ab9463c47234?q=80&w=1600&auto=format&fit=crop');">
-        <div class="slide-gradient"></div>
-        <div class="container container-narrow hero-content">
-          <div class="row">
-            <div class="col-lg-8">
-              <p class="hero-eyebrow">Who we are</p>
-              <h1>A leading child protection organisation, rooted in Thika since 2004.</h1>
-              <p class="lead mt-3">We promote access to equal and sustainable opportunities for children and vulnerable families across Kiambu, Murang'a and Nairobi counties.</p>
-              <div class="d-flex gap-3 mt-4 flex-wrap">
-                <a href="#focus" class="btn-primary-afcic">Our focus areas</a>
-                <a href="#about" class="btn-outline-afcic">Learn more →</a>
-              </div>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0"><a class="btn-donate" href="#donate">Donate</a></li>
+                </ul>
             </div>
-          </div>
         </div>
-      </div>
+    </nav>
 
-      <div class="carousel-item" style="background-image:url('https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1600&auto=format&fit=crop');">
-        <div class="slide-gradient"></div>
-        <div class="container container-narrow hero-content">
-          <div class="row">
-            <div class="col-lg-8">
-              <p class="hero-eyebrow">What we do</p>
-              <h1>Projects at the heart of the community.</h1>
-              <p class="lead mt-3">Child protection, education empowerment, health and community empowerment — delivered through two rescue centres and daily outreach.</p>
-              <div class="d-flex gap-3 mt-4 flex-wrap">
-                <a href="#centers" class="btn-primary-afcic">Our centres</a>
-                <a href="#stories" class="btn-outline-afcic">Watch stories</a>
-              </div>
+    <!-- ================= HERO CAROUSEL ================= -->
+    <header class="hero-carousel">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
+
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="carousel-item" style="background-image:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1600&auto=format&fit=crop');">
-        <div class="slide-gradient"></div>
-        <div class="container container-narrow hero-content">
-          <div class="row">
-            <div class="col-lg-8">
-              <p class="hero-eyebrow">Why we do it</p>
-              <h1>Ending the cycle of poverty, one family at a time.</h1>
-              <p class="lead mt-3">Every programme is built to empower children today and impact the community for generations to come.</p>
-              <div class="d-flex gap-3 mt-4 flex-wrap">
-                <a href="#donate" class="btn-primary-afcic">Donate now</a>
-                <a href="#donate" class="btn-outline-afcic">Donation causes</a>
-              </div>
+            <div class="carousel-inner">
+
+                <div class="carousel-item active" style="background-image:url('https://images.unsplash.com/photo-1497231928782-ab9463c47234?q=80&w=1600&auto=format&fit=crop');">
+                    <div class="slide-gradient"></div>
+                    <div class="container container-narrow hero-content">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <p class="hero-eyebrow">Who we are</p>
+                                <h1>A leading child protection organisation, rooted in Thika since 2004.</h1>
+                                <p class="lead mt-3">We promote access to equal and sustainable opportunities for children and vulnerable families across Kiambu, Murang'a and Nairobi counties.</p>
+                                <div class="d-flex gap-3 mt-4 flex-wrap">
+                                    <a href="#focus" class="btn-primary-afcic">Our focus areas</a>
+                                    <a href="#about" class="btn-outline-afcic">Learn more →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item" style="background-image:url('https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1600&auto=format&fit=crop');">
+                    <div class="slide-gradient"></div>
+                    <div class="container container-narrow hero-content">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <p class="hero-eyebrow">What we do</p>
+                                <h1>Projects at the heart of the community.</h1>
+                                <p class="lead mt-3">Child protection, education empowerment, health and community empowerment — delivered through two rescue centres and daily outreach.</p>
+                                <div class="d-flex gap-3 mt-4 flex-wrap">
+                                    <a href="#centers" class="btn-primary-afcic">Our centres</a>
+                                    <a href="#stories" class="btn-outline-afcic">Watch stories</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item" style="background-image:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1600&auto=format&fit=crop');">
+                    <div class="slide-gradient"></div>
+                    <div class="container container-narrow hero-content">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <p class="hero-eyebrow">Why we do it</p>
+                                <h1>Ending the cycle of poverty, one family at a time.</h1>
+                                <p class="lead mt-3">Every programme is built to empower children today and impact the community for generations to come.</p>
+                                <div class="d-flex gap-3 mt-4 flex-wrap">
+                                    <a href="#donate" class="btn-primary-afcic">Donate now</a>
+                                    <a href="#donate" class="btn-outline-afcic">Donation causes</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-          </div>
-        </div>
-      </div>
 
-    </div>
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
-  </div>
-</header>
+        </div>
+    </header>
 
-<!-- ================= STATS OVERLAP CARD ================= -->
-<div class="container container-narrow stats-overlap">
-  <div class="stats-card">
-    <div class="stat"><div class="num" data-count-to="1500" data-suffix="+">0</div><div class="label">Children supported</div></div>
-    <div class="stat"><div class="num" data-count-to="300" data-suffix="">0</div><div class="label">Active volunteers</div></div>
-    <div class="stat"><div class="num" data-count-to="10" data-suffix="">0</div><div class="label">Partner organisations</div></div>
-    <div class="stat"><div class="num" data-count-to="20" data-suffix="+">0</div><div class="label">Years in Thika</div></div>
-  </div>
-</div>
-
-<!-- ================= ABOUT / MISSION / VISION ================= -->
-<section class="section-pad pt-4 section-tint-blue" id="about">
-  <div class="container container-narrow">
-    <div class="section-head">
-      <hr class="rule">
-      <h2>A child protection organisation rooted in one town.</h2>
-      <p>For over two decades AfCiC has worked from Thika outward — rescuing children from the street, keeping girls in school, and helping families build an income that lasts.</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="about-card">
-          <span class="tag">Since 2004</span>
-          <h3>About us</h3>
-          <p>Action for Children in Conflict (AfCiC) is a Kenyan NGO based in Thika, working across Kiambu, Murang'a and Nairobi counties to protect children and strengthen the families around them.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="about-card about-card-accent">
-          <span class="tag">What drives us</span>
-          <h3>Our mission</h3>
-          <p>To enhance and support the growth of children, young people and their families by facilitating access to justice, education, health, and psychosocial and economic support — with communities at the centre of their own growth.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="about-card">
-          <span class="tag">Where we're headed</span>
-          <h3>Our vision</h3>
-          <p>A world of equal and sustainable opportunities for every child — regardless of where they were born or what they've already been through.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= FOCUS AREAS ================= -->
-<section class="section-pad focus-section" id="focus">
-  <div class="container container-narrow">
-    <div class="section-head">
-      <hr class="rule">
-      <h2>Four areas, one goal</h2>
-      <p>Systemic problems need connected solutions — this is where we put our energy.</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-3">
-        <div class="focus-card">
-          <div class="focus-img" style="background-image:url('https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=800&auto=format&fit=crop');"></div>
-          <div class="focus-body">
-            <span class="focus-tag">Child protection</span>
-            <h3>Safety first</h3>
-            <p>Rescuing children from violence, exploitation and neglect, and promoting positive parenting in the community.</p>
-            <a href="focus-child-protection.html" class="focus-link">Read more</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="focus-card">
-          <div class="focus-img" style="background-image:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop');"></div>
-          <div class="focus-body">
-            <span class="focus-tag">Education</span>
-            <h3>Classrooms that keep kids</h3>
-            <p>Sponsoring children from vulnerable backgrounds so school stays a place they return to, not one they leave.</p>
-            <a href="focus-education-empowerment.html" class="focus-link">Read more</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="focus-card">
-          <div class="focus-img" style="background-image:url('https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=800&auto=format&fit=crop');"></div>
-          <div class="focus-body">
-            <span class="focus-tag">Women's empowerment</span>
-            <h3>Equal ground</h3>
-            <p>Challenging norms that hold women back through education, awareness and economic support.</p>
-            <a href="focus-womens-empowerment.html" class="focus-link">Read more</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="focus-card">
-          <div class="focus-img" style="background-image:url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=800&auto=format&fit=crop');"></div>
-          <div class="focus-body">
-            <span class="focus-tag">Climate</span>
-            <h3>Land that lasts</h3>
-            <p>Promoting renewable energy and sustainable land management so families aren't the first to feel the next drought.</p>
-            <a href="focus-climate-change.html" class="focus-link">Read more</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= IMPACT BAND ================= -->
-<section class="impact-band py-5">
-  <div class="container container-narrow">
-    <div class="row text-center g-4">
-      <div class="col-6 col-md-3 stat-col">
-        <div class="num" data-count-to="1500" data-suffix="">0</div>
-        <div class="label">Children reached</div>
-      </div>
-      <div class="col-6 col-md-3 divider stat-col">
-        <div class="num" data-count-to="300" data-suffix="">0</div>
-        <div class="label">Volunteers</div>
-      </div>
-      <div class="col-6 col-md-3 divider stat-col">
-        <div class="num" data-count-to="10" data-suffix="">0</div>
-        <div class="label">Partner organisations</div>
-      </div>
-      <div class="col-6 col-md-3 divider stat-col">
-        <div class="num" data-count-to="20" data-suffix="">0</div>
-        <div class="label">Awards received</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= CENTERS ================= -->
-<section class="section-pad section-tint-orange" id="centers">
-  <div class="container container-narrow">
-    <div class="section-head">
-      <hr class="rule">
-      <h2>Two centres, always open</h2>
-      <p>Where a rescued child sleeps tonight, and where a working child finds a reason to come back tomorrow.</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="center-card">
-          <div class="center-bg" style="background-image:url('https://images.unsplash.com/photo-1594708767771-a7502209ff51?q=80&w=1000&auto=format&fit=crop');"></div>
-          <div class="overlay"></div>
-          <div class="content">
-            <span class="badge-center">Karibaribi, Thika</span>
-            <h3>Temporary Rescue Center</h3>
-            <p>A safe haven for children rescued from the street — food, shelter, clothing and a path back to family or school.</p>
-            <a href="center-trc.html" class="focus-link" style="color:#fff;">Learn more →</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="center-card">
-          <div class="center-bg" style="background-image:url('https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=1000&auto=format&fit=crop');"></div>
-          <div class="overlay"></div>
-          <div class="content">
-            <span class="badge-center">Outreach Programme</span>
-            <h3>Working Children Center</h3>
-            <p>A daily outreach programme for vulnerable children, running from morning until late afternoon.</p>
-            <a href="center-wcc.html" class="focus-link" style="color:#fff;">Learn more →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= STORIES ================= -->
-<section class="section-pad focus-section" id="stories">
-  <div class="container container-narrow">
-    <div class="section-head">
-      <hr class="rule">
-      <h2>Turning adversity into opportunity</h2>
-      <p>Three of the young people whose stories changed course through this work.</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="story-card">
-          <div class="story-img-wrap"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop" alt="Portrait representing a young person"></div>
-          <h4>A second chance for Alex</h4>
-          <p>A 15-year-old from Murang'a moves past a childhood marked by poverty toward a steadier future.</p>
-          <a href="story-alex.html" class="story-link">Read the story →</a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="story-card">
-          <div class="story-img-wrap"><img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=800&auto=format&fit=crop" alt="Portrait representing a young person"></div>
-          <h4>Waweru's journey of resilience</h4>
-          <p>Growing up in Kiandutu, one young man's path from hardship to transformation.</p>
-          <a href="story-waweru.html" class="story-link">Read the story →</a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="story-card">
-          <div class="story-img-wrap"><img src="https://images.unsplash.com/photo-1531123414780-f74242c2b052?q=80&w=800&auto=format&fit=crop" alt="Portrait representing a young person"></div>
-          <h4>Nelly's brighter future</h4>
-          <p>A 22-year-old from Thika shows what a single well-placed programme can change.</p>
-          <a href="story-nelly.html" class="story-link">Read the story →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= VIDEO SLIDER ================= -->
-<section class="section-pad video-slider" id="videos">
-  <div class="container container-narrow">
-    <div class="section-head text-center mx-auto">
-      <hr class="rule mx-auto">
-      <h2>See the work in motion</h2>
-      <p class="mx-auto">Short films from the centres, the classrooms, and the field — replace these with your own YouTube uploads.</p>
-    </div>
-
-    <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="8000">
-      <div class="carousel-inner">
-
-        <div class="carousel-item active">
-          <div class="video-slide">
-            <div class="ratio ratio-16x9 video-frame">
-              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" title="A day at the Temporary Rescue Center" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <!-- ================= STATS OVERLAP CARD ================= -->
+    <div class="container container-narrow stats-overlap">
+        <div class="stats-card">
+            <div class="stat">
+                <div class="num" data-count-to="1500" data-suffix="+">0</div>
+                <div class="label">Children supported</div>
             </div>
-            <h3 class="video-caption">A day at the Temporary Rescue Center</h3>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <div class="video-slide">
-            <div class="ratio ratio-16x9 video-frame">
-              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" title="Meet the children we work with" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="stat">
+                <div class="num" data-count-to="300" data-suffix="">0</div>
+                <div class="label">Active volunteers</div>
             </div>
-            <h3 class="video-caption">Meet the children we work with</h3>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <div class="video-slide">
-            <div class="ratio ratio-16x9 video-frame">
-              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_3" title="How your donation is used" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="stat">
+                <div class="num" data-count-to="10" data-suffix="">0</div>
+                <div class="label">Partner organisations</div>
             </div>
-            <h3 class="video-caption">How your donation is used</h3>
-          </div>
+            <div class="stat">
+                <div class="num" data-count-to="20" data-suffix="+">0</div>
+                <div class="label">Years in Thika</div>
+            </div>
         </div>
+    </div>
 
-      </div>
+    <!-- ================= ABOUT / MISSION / VISION ================= -->
+    <section class="section-pad pt-4 section-tint-blue" id="about">
+        <div class="container container-narrow">
+            <div class="section-head">
+                <hr class="rule">
+                <h2>A child protection organisation rooted in one town.</h2>
+                <p>For over two decades AfCiC has worked from Thika outward — rescuing children from the street, keeping girls in school, and helping families build an income that lasts.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="about-card">
+                        <span class="tag">Since 2004</span>
+                        <h3>About us</h3>
+                        <p>Action for Children in Conflict (AfCiC) is a Kenyan NGO based in Thika, working across Kiambu, Murang'a and Nairobi counties to protect children and strengthen the families around them.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="about-card about-card-accent">
+                        <span class="tag">What drives us</span>
+                        <h3>Our mission</h3>
+                        <p>To enhance and support the growth of children, young people and their families by facilitating access to justice, education, health, and psychosocial and economic support — with communities at the centre of their own growth.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="about-card">
+                        <span class="tag">Where we're headed</span>
+                        <h3>Our vision</h3>
+                        <p>A world of equal and sustainable opportunities for every child — regardless of where they were born or what they've already been through.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+    <!-- ================= FOCUS AREAS ================= -->
+    <section class="section-pad focus-section" id="focus">
+        <div class="container container-narrow">
+            <div class="section-head">
+                <hr class="rule">
+                <h2>Four areas, one goal</h2>
+                <p>Systemic problems need connected solutions — this is where we put our energy.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="focus-card">
+                        <div class="focus-img" style="background-image:url('https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=800&auto=format&fit=crop');"></div>
+                        <div class="focus-body">
+                            <span class="focus-tag">Child protection</span>
+                            <h3>Safety first</h3>
+                            <p>Rescuing children from violence, exploitation and neglect, and promoting positive parenting in the community.</p>
+                            <a href="focus-child-protection.html" class="focus-link">Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="focus-card">
+                        <div class="focus-img" style="background-image:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop');"></div>
+                        <div class="focus-body">
+                            <span class="focus-tag">Education</span>
+                            <h3>Classrooms that keep kids</h3>
+                            <p>Sponsoring children from vulnerable backgrounds so school stays a place they return to, not one they leave.</p>
+                            <a href="focus-education-empowerment.html" class="focus-link">Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="focus-card">
+                        <div class="focus-img" style="background-image:url('https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=800&auto=format&fit=crop');"></div>
+                        <div class="focus-body">
+                            <span class="focus-tag">Women's empowerment</span>
+                            <h3>Equal ground</h3>
+                            <p>Challenging norms that hold women back through education, awareness and economic support.</p>
+                            <a href="focus-womens-empowerment.html" class="focus-link">Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="focus-card">
+                        <div class="focus-img" style="background-image:url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=800&auto=format&fit=crop');"></div>
+                        <div class="focus-body">
+                            <span class="focus-tag">Climate</span>
+                            <h3>Land that lasts</h3>
+                            <p>Promoting renewable energy and sustainable land management so families aren't the first to feel the next drought.</p>
+                            <a href="focus-climate-change.html" class="focus-link">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= IMPACT BAND ================= -->
+    <section class="impact-band py-5">
+        <div class="container container-narrow">
+            <div class="row text-center g-4">
+                <div class="col-6 col-md-3 stat-col">
+                    <div class="num" data-count-to="1500" data-suffix="">0</div>
+                    <div class="label">Children reached</div>
+                </div>
+                <div class="col-6 col-md-3 divider stat-col">
+                    <div class="num" data-count-to="300" data-suffix="">0</div>
+                    <div class="label">Volunteers</div>
+                </div>
+                <div class="col-6 col-md-3 divider stat-col">
+                    <div class="num" data-count-to="10" data-suffix="">0</div>
+                    <div class="label">Partner organisations</div>
+                </div>
+                <div class="col-6 col-md-3 divider stat-col">
+                    <div class="num" data-count-to="20" data-suffix="">0</div>
+                    <div class="label">Awards received</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CENTERS ================= -->
+    <section class="section-pad section-tint-orange" id="centers">
+        <div class="container container-narrow">
+            <div class="section-head">
+                <hr class="rule">
+                <h2>Two centres, always open</h2>
+                <p>Where a rescued child sleeps tonight, and where a working child finds a reason to come back tomorrow.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="center-card">
+                        <div class="center-bg" style="background-image:url('https://images.unsplash.com/photo-1594708767771-a7502209ff51?q=80&w=1000&auto=format&fit=crop');"></div>
+                        <div class="overlay"></div>
+                        <div class="content">
+                            <span class="badge-center">Karibaribi, Thika</span>
+                            <h3>Temporary Rescue Center</h3>
+                            <p>A safe haven for children rescued from the street — food, shelter, clothing and a path back to family or school.</p>
+                            <a href="center-trc.html" class="focus-link" style="color:#fff;">Learn more →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="center-card">
+                        <div class="center-bg" style="background-image:url('https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=1000&auto=format&fit=crop');"></div>
+                        <div class="overlay"></div>
+                        <div class="content">
+                            <span class="badge-center">Outreach Programme</span>
+                            <h3>Working Children Center</h3>
+                            <p>A daily outreach programme for vulnerable children, running from morning until late afternoon.</p>
+                            <a href="center-wcc.html" class="focus-link" style="color:#fff;">Learn more →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= STORIES ================= -->
+    <section class="section-pad focus-section" id="stories">
+        <div class="container container-narrow">
+            <div class="section-head">
+                <hr class="rule">
+                <h2>Turning adversity into opportunity</h2>
+                <p>Three of the young people whose stories changed course through this work.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="story-card">
+                        <div class="story-img-wrap"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop" alt="Portrait representing a young person"></div>
+                        <h4>A second chance for Alex</h4>
+                        <p>A 15-year-old from Murang'a moves past a childhood marked by poverty toward a steadier future.</p>
+                        <a href="story-alex.html" class="story-link">Read the story →</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="story-card">
+                        <div class="story-img-wrap"><img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=800&auto=format&fit=crop" alt="Portrait representing a young person"></div>
+                        <h4>Waweru's journey of resilience</h4>
+                        <p>Growing up in Kiandutu, one young man's path from hardship to transformation.</p>
+                        <a href="story-waweru.html" class="story-link">Read the story →</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="story-card">
+                        <div class="story-img-wrap"><img src="https://images.unsplash.com/photo-1531123414780-f74242c2b052?q=80&w=800&auto=format&fit=crop" alt="Portrait representing a young person"></div>
+                        <h4>Nelly's brighter future</h4>
+                        <p>A 22-year-old from Thika shows what a single well-placed programme can change.</p>
+                        <a href="story-nelly.html" class="story-link">Read the story →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= VIDEO SLIDER ================= -->
+    <section class="section-pad video-slider" id="videos">
+        <div class="container container-narrow">
+            <div class="section-head text-center mx-auto">
+                <hr class="rule mx-auto">
+                <h2>See the work in motion</h2>
+                <p class="mx-auto">Short films from the centres, the classrooms, and the field — replace these with your own YouTube uploads.</p>
+            </div>
+
+            <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="8000">
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <div class="video-slide">
+                            <div class="ratio ratio-16x9 video-frame">
+                                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" title="A day at the Temporary Rescue Center" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </div>
+                            <h3 class="video-caption">A day at the Temporary Rescue Center</h3>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="video-slide">
+                            <div class="ratio ratio-16x9 video-frame">
+                                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" title="Meet the children we work with" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </div>
+                            <h3 class="video-caption">Meet the children we work with</h3>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="video-slide">
+                            <div class="ratio ratio-16x9 video-frame">
+                                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_3" title="How your donation is used" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </div>
+                            <h3 class="video-caption">How your donation is used</h3>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
 
-      <div class="carousel-indicators video-indicators">
-        <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="0" class="active" aria-label="Video 1"></button>
-        <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="1" aria-label="Video 2"></button>
-        <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="2" aria-label="Video 3"></button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= PARTNERS SLIDER ================= -->
-<section class="section-pad partners-slider" id="partners">
-  <div class="container container-narrow">
-    <div class="section-head text-center mx-auto">
-      <hr class="rule mx-auto">
-      <h2>Backed by organisations who share the work</h2>
-      <p class="mx-auto">Ten partners across Kenya, Europe and beyond make our programmes possible.</p>
-    </div>
-
-    <div id="partnersCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5500">
-      <div class="carousel-inner">
-
-        <div class="carousel-item active">
-          <div class="partner-slide">
-            <div class="partner-logo">KN</div>
-            <div class="partner-name">Kindernothilfe</div>
-          </div>
+                <div class="carousel-indicators video-indicators">
+                    <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="0" class="active" aria-label="Video 1"></button>
+                    <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="1" aria-label="Video 2"></button>
+                    <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="2" aria-label="Video 3"></button>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="carousel-item">
-          <div class="partner-slide">
-            <div class="partner-logo">TdH</div>
-            <div class="partner-name">Terre des Hommes</div>
-          </div>
-        </div>
+    <!-- ================= PARTNERS SLIDER ================= -->
+    <section class="section-pad partners-slider" id="partners">
+        <div class="container container-narrow">
+            <div class="section-head text-center mx-auto">
+                <hr class="rule mx-auto">
+                <h2>Backed by organisations who share the work</h2>
+                <p class="mx-auto">Ten partners across Kenya, Europe and beyond make our programmes possible.</p>
+            </div>
 
-        <div class="carousel-item">
-          <div class="partner-slide">
-            <div class="partner-logo">GA</div>
-            <div class="partner-name">Gesundes Afrika</div>
-          </div>
-        </div>
+            <div id="partnersCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5500">
+                <div class="carousel-inner">
 
-        <div class="carousel-item">
-          <div class="partner-slide">
-            <div class="partner-logo">CI</div>
-            <div class="partner-name">Capwell Industries</div>
-          </div>
-        </div>
+                    <div class="carousel-item active">
+                        <div class="partner-slide">
+                            <div class="partner-logo">KN</div>
+                            <div class="partner-name">Kindernothilfe</div>
+                        </div>
+                    </div>
 
-        <div class="carousel-item">
-          <div class="partner-slide">
-            <div class="partner-logo">DKA</div>
-            <div class="partner-name">DKA Austria</div>
-          </div>
-        </div>
+                    <div class="carousel-item">
+                        <div class="partner-slide">
+                            <div class="partner-logo">TdH</div>
+                            <div class="partner-name">Terre des Hommes</div>
+                        </div>
+                    </div>
 
-      </div>
+                    <div class="carousel-item">
+                        <div class="partner-slide">
+                            <div class="partner-logo">GA</div>
+                            <div class="partner-name">Gesundes Afrika</div>
+                        </div>
+                    </div>
 
-      <button class="carousel-control-prev" type="button" data-bs-target="#partnersCarousel" data-bs-slide="prev">
+                    <div class="carousel-item">
+                        <div class="partner-slide">
+                            <div class="partner-logo">CI</div>
+                            <div class="partner-name">Capwell Industries</div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="partner-slide">
+                            <div class="partner-logo">DKA</div>
+                            <div class="partner-name">DKA Austria</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#partnersCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#partnersCarousel" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#partnersCarousel" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
 
-      <div class="carousel-indicators partners-indicators">
-        <button type="button" data-bs-target="#partnersCarousel" data-bs-slide-to="0" class="active" aria-label="Partner 1"></button>
-        <button type="button" data-bs-target="#partnersCarousel" data-bs-slide-to="1" aria-label="Partner 2"></button>
-        <button type="button" data-bs-target="#partnersCarousel" data-bs-slide-to="2" aria-label="Partner 3"></button>
-        <button type="button" data-bs-target="#partnersCarousel" data-bs-slide-to="3" aria-label="Partner 4"></button>
-        <button type="button" data-bs-target="#partnersCarousel" data-bs-slide-to="4" aria-label="Partner 5"></button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= CTA STRIP ================= -->
-<section class="cta-strip section-pad" id="donate">
-  <div class="container container-narrow text-center">
-    <h2 class="mb-3">Your contribution keeps a centre running.</h2>
-    <p class="mb-4 mx-auto" style="max-width:56ch;">Every donation goes directly into education, protection, women's empowerment and climate work in Thika.</p>
-    <div class="d-flex justify-content-center gap-3 flex-wrap">
-      <a href="#" class="btn-primary-afcic">Donate now</a>
-      <a href="#contact" class="btn-outline-afcic">Become a volunteer</a>
-      <a href="#partners" class="btn-outline-afcic">Partner with us</a>
-    </div>
-  </div>
-</section>
-
-<!-- ================= NEWS & ARTICLES SLIDER ================= -->
-<section class="section-pad news-slider" id="news">
-  <div class="container container-narrow">
-    <div class="section-head">
-      <hr class="rule">
-      <h2>News &amp; articles</h2>
-      <p>Updates from the centres, the field, and the wider programme.</p>
-    </div>
-
-    <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
-      <div class="carousel-inner">
-
-        <div class="carousel-item active">
-          <div class="news-slide">
-            <div class="news-slide-img" style="background-image:url('https://images.unsplash.com/photo-1497486751825-1233686d5d80?q=80&w=1000&auto=format&fit=crop');"></div>
-            <div class="news-slide-body">
-              <span class="news-tag">News · 2 Sep 2026</span>
-              <h3>Back-to-school drive reaches 200 children this term</h3>
-              <p>New uniforms, books and fees support mean another cohort of sponsored children start the term without interruption.</p>
-              <a href="news-back-to-school-drive.html" class="news-link">Read article</a>
+                <div class="carousel-indicators partners-indicators">
+                    <button type="button" data-bs-target="#partnersCarousel" data-bs-slide-to="0" class="active" aria-label="Partner 1"></button>
+                    <button type="button" data-bs-target="#partnersCarousel" data-bs-slide-to="1" aria-label="Partner 2"></button>
+                    <button type="button" data-bs-target="#partnersCarousel" data-bs-slide-to="2" aria-label="Partner 3"></button>
+                    <button type="button" data-bs-target="#partnersCarousel" data-bs-slide-to="3" aria-label="Partner 4"></button>
+                    <button type="button" data-bs-target="#partnersCarousel" data-bs-slide-to="4" aria-label="Partner 5"></button>
+                </div>
             </div>
-          </div>
         </div>
+    </section>
 
-        <div class="carousel-item">
-          <div class="news-slide">
-            <div class="news-slide-img" style="background-image:url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1000&auto=format&fit=crop');"></div>
-            <div class="news-slide-body">
-              <span class="news-tag">Event · 14 Aug 2026</span>
-              <h3>Child rights training reaches five local schools</h3>
-              <p>Teachers and parents across Kiambu joined sessions on positive discipline and spotting early signs of neglect or abuse.</p>
-              <a href="news-child-rights-training.html" class="news-link">Read article</a>
+    <!-- ================= CTA STRIP ================= -->
+    <section class="cta-strip section-pad" id="donate">
+        <div class="container container-narrow text-center">
+            <h2 class="mb-3">Your contribution keeps a centre running.</h2>
+            <p class="mb-4 mx-auto" style="max-width:56ch;">Every donation goes directly into education, protection, women's empowerment and climate work in Thika.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="#" class="btn-primary-afcic">Donate now</a>
+                <a href="#contact" class="btn-outline-afcic">Become a volunteer</a>
+                <a href="#partners" class="btn-outline-afcic">Partner with us</a>
             </div>
-          </div>
         </div>
+    </section>
 
-        <div class="carousel-item">
-          <div class="news-slide">
-            <div class="news-slide-img" style="background-image:url('https://images.unsplash.com/photo-1541199249251-f713e6145474?q=80&w=1000&auto=format&fit=crop');"></div>
-            <div class="news-slide-body">
-              <span class="news-tag">Report · 3 Jul 2026</span>
-              <h3>New borehole brings clean water to Karibaribi centre</h3>
-              <p>A partner-funded borehole now supplies the Temporary Rescue Center, cutting water costs and downtime during dry spells.</p>
-              <a href="news-borehole-karibaribi.html" class="news-link">Read article</a>
+    <!-- ================= NEWS & ARTICLES SLIDER ================= -->
+    <section class="section-pad news-slider" id="news">
+        <div class="container container-narrow">
+            <div class="section-head">
+                <hr class="rule">
+                <h2>News &amp; articles</h2>
+                <p>Updates from the centres, the field, and the wider programme.</p>
             </div>
-          </div>
-        </div>
 
-      </div>
+            <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+                <div class="carousel-inner">
 
-      <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
+                    <div class="carousel-item active">
+                        <div class="news-slide">
+                            <div class="news-slide-img" style="background-image:url('https://images.unsplash.com/photo-1497486751825-1233686d5d80?q=80&w=1000&auto=format&fit=crop');"></div>
+                            <div class="news-slide-body">
+                                <span class="news-tag">News · 2 Sep 2026</span>
+                                <h3>Back-to-school drive reaches 200 children this term</h3>
+                                <p>New uniforms, books and fees support mean another cohort of sponsored children start the term without interruption.</p>
+                                <a href="news-back-to-school-drive.html" class="news-link">Read article</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="news-slide">
+                            <div class="news-slide-img" style="background-image:url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1000&auto=format&fit=crop');"></div>
+                            <div class="news-slide-body">
+                                <span class="news-tag">Event · 14 Aug 2026</span>
+                                <h3>Child rights training reaches five local schools</h3>
+                                <p>Teachers and parents across Kiambu joined sessions on positive discipline and spotting early signs of neglect or abuse.</p>
+                                <a href="news-child-rights-training.html" class="news-link">Read article</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="news-slide">
+                            <div class="news-slide-img" style="background-image:url('https://images.unsplash.com/photo-1541199249251-f713e6145474?q=80&w=1000&auto=format&fit=crop');"></div>
+                            <div class="news-slide-body">
+                                <span class="news-tag">Report · 3 Jul 2026</span>
+                                <h3>New borehole brings clean water to Karibaribi centre</h3>
+                                <p>A partner-funded borehole now supplies the Temporary Rescue Center, cutting water costs and downtime during dry spells.</p>
+                                <a href="news-borehole-karibaribi.html" class="news-link">Read article</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
 
-      <div class="carousel-indicators news-indicators">
-        <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="0" class="active" aria-label="Article 1"></button>
-        <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="1" aria-label="Article 2"></button>
-        <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="2" aria-label="Article 3"></button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= NEWSLETTER ================= -->
-<section class="newsletter py-5">
-  <div class="container container-narrow">
-    <div class="row align-items-center g-3">
-      <div class="col-lg-5">
-        <h3 class="mb-1">Stay close to the work</h3>
-        <p class="mb-0" style="color:rgba(255,255,255,.85);">Monthly updates on programmes, stories and how funds are used.</p>
-      </div>
-      <div class="col-lg-7">
-        <form class="d-flex flex-column flex-sm-row gap-2" onsubmit="return false;">
-          <input type="email" class="form-control" placeholder="Your email address" required>
-          <button type="submit" class="btn-sub">Subscribe</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer id="contact" class="pt-5 pb-4">
-  <div class="container container-narrow">
-    <div class="row g-4">
-      <div class="col-lg-4">
-        <div class="footer-brand mb-3">AfCi<span>C</span></div>
-        <p>Action for Children in Conflict — Section 9, Thika, Kenya. P.O. Box 6439-01000.</p>
-        <div class="mt-3">
-          <a href="https://x.com/AfCiC" class="social-dot">X</a>
-          <a href="https://www.facebook.com/ActionChildren" class="social-dot">f</a>
-          <a href="https://www.linkedin.com/company/action-for-children-in-conflict-afcic" class="social-dot">in</a>
+                <div class="carousel-indicators news-indicators">
+                    <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="0" class="active" aria-label="Article 1"></button>
+                    <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="1" aria-label="Article 2"></button>
+                    <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="2" aria-label="Article 3"></button>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-6 col-lg-2">
-        <h5>About</h5>
-        <ul class="list-unstyled">
-          <li class="mb-2"><a href="#about">Our story</a></li>
-          <li class="mb-2"><a href="#focus">Focus areas</a></li>
-          <li class="mb-2"><a href="#stories">Success stories</a></li>
-          <li class="mb-2"><a href="#">Careers</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-lg-2">
-        <h5>Get involved</h5>
-        <ul class="list-unstyled">
-          <li class="mb-2"><a href="#donate">Donate</a></li>
-          <li class="mb-2"><a href="#">Volunteer</a></li>
-          <li class="mb-2"><a href="#">Partner with us</a></li>
-        </ul>
-      </div>
-      <div class="col-lg-4">
-        <h5>Head office</h5>
-        <p class="mb-1">+254 714 038285</p>
-        <p class="mb-1">infokenya@actionchildren.or.ke</p>
-        <p>Open Monday–Friday, 8am–5pm EAT</p>
-      </div>
-    </div>
-    <div class="footer-bottom pt-4 mt-4 d-flex flex-column flex-sm-row justify-content-between">
-      <span>© 2026 Action for Children in Conflict. All rights reserved.</span>
-      <span>Starter template — built for actionchildren.or.ke</span>
-    </div>
-  </div>
-</footer>
+    </section>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
-<script>
-  // Count-up animation for stat figures, triggered once each enters view.
-  (function(){
-    var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    <!-- ================= NEWSLETTER ================= -->
+    <section class="newsletter py-5">
+        <div class="container container-narrow">
+            <div class="row align-items-center g-3">
+                <div class="col-lg-5">
+                    <h3 class="mb-1">Stay close to the work</h3>
+                    <p class="mb-0" style="color:rgba(255,255,255,.85);">Monthly updates on programmes, stories and how funds are used.</p>
+                </div>
+                <div class="col-lg-7">
+                    <form class="d-flex flex-column flex-sm-row gap-2" onsubmit="return false;">
+                        <input type="email" class="form-control" placeholder="Your email address" required>
+                        <button type="submit" class="btn-sub">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    function formatNumber(n){
-      return Math.round(n).toLocaleString('en-US');
-    }
+    <!-- ================= FOOTER ================= -->
+    <footer id="contact" class="pt-5 pb-4">
+        <div class="container container-narrow">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand mb-3">AfCi<span>C</span></div>
+                    <p>Action for Children in Conflict — Section 9, Thika, Kenya. P.O. Box 6439-01000.</p>
+                    <div class="mt-3">
+                        <a href="https://x.com/AfCiC" class="social-dot">X</a>
+                        <a href="https://www.facebook.com/ActionChildren" class="social-dot">f</a>
+                        <a href="https://www.linkedin.com/company/action-for-children-in-conflict-afcic" class="social-dot">in</a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5>About</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#about">Our story</a></li>
+                        <li class="mb-2"><a href="#focus">Focus areas</a></li>
+                        <li class="mb-2"><a href="#stories">Success stories</a></li>
+                        <li class="mb-2"><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5>Get involved</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#donate">Donate</a></li>
+                        <li class="mb-2"><a href="#">Volunteer</a></li>
+                        <li class="mb-2"><a href="#">Partner with us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Head office</h5>
+                    <p class="mb-1">+254 714 038285</p>
+                    <p class="mb-1">infokenya@actionchildren.or.ke</p>
+                    <p>Open Monday–Friday, 8am–5pm EAT</p>
+                </div>
+            </div>
+            <div class="footer-bottom pt-4 mt-4 d-flex flex-column flex-sm-row justify-content-between">
+                <span>© 2026 Action for Children in Conflict. All rights reserved.</span>
+                <span>Starter template — built for actionchildren.or.ke</span>
+            </div>
+        </div>
+    </footer>
 
-    function animateCount(el){
-      var target = parseFloat(el.getAttribute('data-count-to'), 10);
-      var suffix = el.getAttribute('data-suffix') || '';
-      if (prefersReduced || isNaN(target)){
-        el.textContent = formatNumber(target) + suffix;
-        return;
-      }
-      var duration = 1400;
-      var start = null;
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Count-up animation for stat figures, triggered once each enters view.
+        (function() {
+            var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      function step(timestamp){
-        if (!start) start = timestamp;
-        var progress = Math.min((timestamp - start) / duration, 1);
-        var eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-        el.textContent = formatNumber(target * eased) + suffix;
-        if (progress < 1){
-          window.requestAnimationFrame(step);
-        } else {
-          el.textContent = formatNumber(target) + suffix;
-        }
-      }
-      window.requestAnimationFrame(step);
-    }
+            function formatNumber(n) {
+                return Math.round(n).toLocaleString('en-US');
+            }
 
-    var counters = document.querySelectorAll('[data-count-to]');
-    if (!counters.length) return;
+            function animateCount(el) {
+                var target = parseFloat(el.getAttribute('data-count-to'), 10);
+                var suffix = el.getAttribute('data-suffix') || '';
+                if (prefersReduced || isNaN(target)) {
+                    el.textContent = formatNumber(target) + suffix;
+                    return;
+                }
+                var duration = 1400;
+                var start = null;
 
-    if ('IntersectionObserver' in window){
-      var observer = new IntersectionObserver(function(entries, obs){
-        entries.forEach(function(entry){
-          if (entry.isIntersecting){
-            animateCount(entry.target);
-            obs.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.5 });
+                function step(timestamp) {
+                    if (!start) start = timestamp;
+                    var progress = Math.min((timestamp - start) / duration, 1);
+                    var eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+                    el.textContent = formatNumber(target * eased) + suffix;
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    } else {
+                        el.textContent = formatNumber(target) + suffix;
+                    }
+                }
+                window.requestAnimationFrame(step);
+            }
 
-      counters.forEach(function(el){ observer.observe(el); });
-    } else {
-      counters.forEach(animateCount);
-    }
-  })();
-</script>
+            var counters = document.querySelectorAll('[data-count-to]');
+            if (!counters.length) return;
+
+            if ('IntersectionObserver' in window) {
+                var observer = new IntersectionObserver(function(entries, obs) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            animateCount(entry.target);
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.5
+                });
+
+                counters.forEach(function(el) {
+                    observer.observe(el);
+                });
+            } else {
+                counters.forEach(animateCount);
+            }
+        })();
+    </script>
 </body>
+
 </html>

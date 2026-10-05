@@ -12,14 +12,14 @@
                 <div class="col-md-6 col-lg-3">
                     
                     <div class="focus-card">
-                        <div class="focus-img"
-                            style="background-image:url('{{ $program->image_url }}');">
+                        <div class="focus-img" >
+                        style="background-image:url('{{ $program->image_url }}');">
                         </div>
                         <div class="focus-body">
                           {{--   <span class="focus-tag">Ch</span> --}}
                             <h3>{{$program->title}}</h3>
                             <p>{!! Str::limit($program->description, 100) !!}.</p>
-                            <a href="focus-child-protection.html" class="focus-link">Read more</a>
+                            <a href="{{ route('programs.show',$program->slug) }}" class="focus-link">Read more</a>
                         </div>
                     </div>
                    
