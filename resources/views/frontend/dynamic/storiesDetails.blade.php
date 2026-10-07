@@ -10,8 +10,8 @@
 
                 <!-- main column -->
                 <div class="col-lg-8">
-                    <img src="{{ asset($storydetail->image_url) }}"
-                        alt="{{ asset($storydetail->image_url) }}" class="article-cover">
+                    <img src="{{ asset($storydetail->image) }}"
+                        alt="{{ $storydetail->name }}" class="article-cover">
 
                     <h1 class="article-title">{{ $storydetail->position }}</h1>
                     <div class="article-meta">Success story</div>
