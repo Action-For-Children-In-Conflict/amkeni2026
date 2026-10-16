@@ -27,5 +27,8 @@ Route::controller(FrontendController::class)->group(function () {
     Route::get('stories/{slug}','allstories')->name('frontend.stories');
     Route::get('/privacy-policy', 'privacy')->name('privacy');
     Route::get('/terms', 'terms')->name('terms');
+    // blogs articles
+    Route::get('/blogs', 'blogs')->name('blogs');
+    Route::get('/blogs/{slug}', 'blog')->name('frontend.blogs.show');
 
 });

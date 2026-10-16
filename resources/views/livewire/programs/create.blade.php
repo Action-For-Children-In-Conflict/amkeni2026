@@ -36,7 +36,7 @@
             <div class="mt-4">
                 <flux:label>{{ __('Image Preview') }}</flux:label>
                 <div class="mt-2 relative inline-block">
-                    <img src="{{ $image->temporaryUrl() }}"
+                    <img src="{{ asset($image->temporaryUrl()) }}"
                         class="h-40 w-auto rounded-lg object-cover shadow-md border border-gray-200 dark:border-gray-700">
                     <button type="button" wire:click="$set('image', null)"
                         class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-1 shadow-lg hover:bg-red-600">

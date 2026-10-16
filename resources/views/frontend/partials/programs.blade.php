@@ -12,8 +12,8 @@
                 <div class="col-md-6 col-lg-3">
                     
                     <div class="focus-card">
-                        <div class="focus-img" >
-                        style="background-image:url('{{ $program->image_url }}');">
+                        <div class="focus-img" 
+                        style="background-image:url('{{ asset('storage/'.$program->image_url) }}');" alt="{{ $program->title }}">
                         </div>
                         <div class="focus-body">
                           {{--   <span class="focus-tag">Ch</span> --}}

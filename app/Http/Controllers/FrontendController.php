@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Partner;
 use App\Models\Program;
 use App\Models\Testmonial;
+use App\Models\Blog;
 
 class FrontendController extends Controller
 {
@@ -15,9 +16,10 @@ class FrontendController extends Controller
         $programs = Program::with('tag')->latest()->paginate(4);
         $testmonialstories = Testmonial::latest()->paginate(3);
         $partners = Partner::latest()->get();
+        $blogs = Blog::latest()->paginate(6);
 
         // dd($programs);
-        return view('frontend.index', compact('title', 'meta_description', 'programs', 'testmonialstories', 'partners'));
+        return view('frontend.index', compact('title', 'meta_description', 'programs', 'testmonialstories', 'partners', 'blogs'));
     }
 
     /* All Prorams */
@@ -52,5 +54,18 @@ class FrontendController extends Controller
         $meta_description = "Discover how our Women's Care Center empowers women and supports their families in Thika, Kenya.";
         return view('frontend.static.wcc', compact('pageTitle', 'meta_description'));
     }
+    public function blogs()
+    {
+        $pageTitle = 'Blog & Articles';
+        $meta_description = "Read our latest blog posts and articles on child protection, education, women's empowerment, and climate action in Thika, Kenya.";
+        return view('frontend.blogs.index', compact('pageTitle', 'meta_description'));
+    }
+    public function blog(string $slug)
+    {
+        $blog = Blog::where('slug', $slug)->firstOrFail();
+        $pageTitle = 'Afcic articles & Blogs';
+        $meta_description = $blog->title;
+        return view('frontend.blogs.show', compact('pageTitle', 'meta_description', 'blog'));
+    }   
 
 }

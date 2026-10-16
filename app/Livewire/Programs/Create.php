@@ -15,7 +15,7 @@ class Create extends Component
 
     public $title = '';
     public $tag_id = '';
-    public $image;
+    public $image = null;
     public $content = '';
 
     protected $rules = [

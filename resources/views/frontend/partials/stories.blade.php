@@ -5,23 +5,24 @@
             <span class="section-eyebrow">Stories of Transformation</span>
             <h2>Turning adversity into opportunity</h2>
             <hr class="rule">
-            <p>Real stories of courage, resilience, and hope from young people whose lives changed course through our programmes.</p>
+            <p>Real stories of courage, resilience, and hope from young people whose lives changed course through our
+                programmes.</p>
         </div>
         <div class="row g-4">
             @foreach ($testmonialstories as $testimonial)
                 <div class="col-md-4 h-100">
                     <div class="story-card">
-                        <div class="story-img-wrap"><img
-                                src="{{ $testimonial->image }}"
+                        <div class="story-img-wrap"><img src="{{ asset('storage/'.$testimonial->image)  }}"
                                 alt="Portrait representing a young person"></div>
                         <h4>{{ $testimonial->position }}</h4>
                         <p>{!! Str::limit(strip_tags($testimonial->name), 110) . '...' !!}</p>
-                        <a href="{{ route('frontend.stories', $testimonial->slug) }}" class="story-link">Read the story →</a>
+                        <a href="{{ route('frontend.stories', $testimonial->slug) }}" class="story-link">Read the story
+                            →</a>
                     </div>
                 </div>
             @endforeach
-          
-           {{--  <div class="col-md-4">
+
+            {{--  <div class="col-md-4">
                 <div class="story-card">
                     <div class="story-img-wrap"><img
                             src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=800&auto=format&fit=crop"

@@ -30,7 +30,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         @forelse ($programs as $program)
             <div wire:key="{{ $program->id }}" class="bg-white dark:bg-zinc-900 rounded-lg shadow-md overflow-hidden flex flex-col">
-                <img src="{{ asset($program->image_url) }}" alt="{{ $program->title }}" class="w-full h-48 object-cover">
+                <img src="{{ asset('storage/'.$program->image_url) }}" alt="{{ $program->title }}" class="w-full h-48 object-cover">
                 <div class="p-4 flex flex-col flex-1">
                     <h3 class="text-lg font-semibold text-zinc-800 dark:text-zinc-200 mb-2">{{ $program->title }}</h3>
                   {{--   <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-4 line-clamp-3">{!! $program->content !!}</p> --}}

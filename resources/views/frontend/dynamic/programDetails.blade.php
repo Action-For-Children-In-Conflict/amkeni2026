@@ -9,7 +9,7 @@
             <div class="row g-5">
                 <!-- main column -->
                 <div class="col-lg-8">
-                    <img src="{{ asset($programdetail->image_url) }}" alt="{{ $programdetail->title }}" class="article-cover">
+                    <img src="{{ asset('storage/'.$programdetail->image_url) }}" alt="{{ $programdetail->title }}" class="article-cover">
 
                     <h1 class="article-title">{{ $programdetail->title }}</h1>
                     {{-- <div class="article-meta">Focus area</div> --}}
