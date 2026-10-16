@@ -18,8 +18,8 @@
                              <div class="news-slide-body">
                                  <span class="news-tag">News · {{ $blog->created_at->format('j M Y') }}</span>
                                  <h3>{{ $blog->title }}</h3>
-                                 <p>{!! Str::limit($blog->content, 150) !!}</p>
-                                 <a href="{{ route('frontend.blogs.show', $blog) }}" class="news-link">Read article</a>
+                                 <p>{!! Str::limit($blog->content, 200) !!}</p>
+                                 <a href="{{ route('frontend.blogs.show', $blog->slug) }}" class="news-link">Read article</a>
                              </div>
                          </div>
                      </div>

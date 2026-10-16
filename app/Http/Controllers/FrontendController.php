@@ -65,7 +65,7 @@ class FrontendController extends Controller
         $blog = Blog::where('slug', $slug)->firstOrFail();
         $pageTitle = 'Afcic articles & Blogs';
         $meta_description = $blog->title;
-        return view('frontend.blogs.show', compact('pageTitle', 'meta_description', 'blog'));
+        return view('frontend.dynamic.blogDetails', compact('pageTitle', 'meta_description', 'blog'));
     }   
 
 }

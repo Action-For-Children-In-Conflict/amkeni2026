@@ -10,29 +10,20 @@
 
                 <!-- main column -->
                 <div class="col-lg-8">
-                    <img src=""
-                        alt="Nelly's brighter future" class="article-cover">
+                    <img src="{{ asset('storage/' . $blog->image_url) }}" alt="{{ $blog->title }}" class="article-cover">
 
-                    <h1 class="article-title">Nelly's brighter future</h1>
-                    <div class="article-meta">Success story &middot; 22, Thika</div>
+                    <h1 class="article-title">{{ $blog->title }}</h1>
+                    <div class="article-meta"> &middot; Blog</div>
 
                     <div class="detail-body">
-                        <p>Nelly first came into contact with AfCiC as a teenager, when a women's empowerment outreach
-                            session in her neighbourhood connected her mother to a savings group. That single point of
-                            contact opened the door to further support.</p>
+                        {!! $blog->content !!}  
+
+
                        
-                 
-                        <div class="pull-quote">&ldquo;Every time things got a little more stable, someone was still there
-                            checking in.&rdquo;
-                            <div
-                                style="font-family:'Inter', sans-serif; font-style:normal; font-size:.85rem; color:#5b6472; margin-top:.6rem;">
-                                — Nelly
-                            </div>
-                        </div>
                         <div class="donate-line">
                             Donate $20 today at <a href="donate">Donate Here</a> to help fund our next programme.
                         </div>
-                        
+
                         <div class="article-byline">Story by the AfCiC Communications Team, Action for Children in Conflict
                             (AfCiC)</div>
 
@@ -56,9 +47,9 @@
                         {{-- Our Partners --}}
                         @include('frontend.inc.partnersCard')
                         {{-- Quotes --}}
-                       @include('frontend.inc.quote')
+                        @include('frontend.inc.quote')
                         {{-- detailview cta --}}
-                      @include('frontend.inc.detailCta')
+                        @include('frontend.inc.detailCta')
 
                     </div>
                 </div>
