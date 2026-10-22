@@ -264,7 +264,7 @@ CREATE TABLE `programs` (
   `user_id` bigint(20) UNSIGNED NOT NULL,
   `tag_id` bigint(20) UNSIGNED NOT NULL,
   `image_url` varchar(255) NOT NULL,
-  `description` text NOT NULL DEFAULT current_timestamp(),
+  `description` text NOT NULL DEFAULT ('text'),
   `content` longtext NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
