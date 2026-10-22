@@ -16,19 +16,20 @@ Route::controller(FrontendController::class)->group(function () {
     Route::get('/projects', 'projects')->name('projects');
 
     Route::get('/get-involved', 'getInvolved')->name('get-involved');
-     //centers trc and wcc
+    // centers trc and wcc
     Route::get('/temporary-rescue-center', 'trc')->name('trc');
     Route::get('/working-children-center', 'wcc')->name('wcc');
 
     Route::get('/contact', 'contact')->name('contact');
-    //programs detail
-    Route::get('programs/{slug}','allprograms')->name('programs.show');
-    //stories detail
-    Route::get('stories/{slug}','allstories')->name('frontend.stories');
+    // programs detail
+    Route::get('programs/{slug}', 'allprograms')->name('programs.show');
+    // stories index + detail
+    Route::get('/stories', 'stories')->name('stories');
+    Route::get('stories/{slug}', 'allstories')->name('frontend.stories');
     Route::get('/privacy-policy', 'privacy')->name('privacy');
     Route::get('/terms', 'terms')->name('terms');
     // blogs articles
-    Route::get('/blogs', 'blogs')->name('blogs');
+    Route::get('/blogs', 'blogsIndex')->name('blogs');
     Route::get('/blogs/{slug}', 'blog')->name('frontend.blogs.show');
 
 });

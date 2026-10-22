@@ -51,10 +51,22 @@
  /* ---------- NAVBAR ---------- */
  
  .navbar-afcic {
-     background: var(--paper);
-     border-bottom: 1px solid var(--line);
+     background: linear-gradient(160deg, var(--blue) 0%, #4d84cf 60%, var(--ink) 130%);
+     border-bottom: 1px solid rgba(255, 255, 255, .12);
      padding-top: .9rem;
      padding-bottom: .9rem;
+ }
+
+ /* Match navbar text/links to the footer's light-on-blue look */
+ .navbar-afcic .navbar-brand,
+ .navbar-afcic .nav-link {
+     color: rgba(255, 255, 255, .85);
+ }
+
+ .navbar-afcic .navbar-brand:hover,
+ .navbar-afcic .nav-link:hover,
+ .navbar-afcic .nav-link:focus {
+     color: #fff;
  }
  
  .navbar-afcic .navbar-brand {
@@ -86,19 +98,19 @@
  /* ---- Toggler (hamburger) ---- */
  
  .navbar-afcic .navbar-toggler {
-     border: 1px solid rgba(0, 0, 0, .15);
+     border: 1px solid rgba(255, 255, 255, .3);
      padding: .4rem .65rem;
  }
- 
+
  .navbar-afcic .navbar-toggler:focus {
      box-shadow: 0 0 0 .2rem rgba(var(--orange), .25);
      outline: none;
  }
- 
+
  .navbar-afcic .navbar-toggler-icon {
-     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
  }
- 
+
  .navbar-afcic .nav-link {
      font-weight: 500;
      color: var(--ink);
@@ -106,17 +118,17 @@
      padding: .4rem 0 !important;
      border-bottom: 2px solid transparent;
  }
- 
+
  .navbar-afcic .nav-link:hover {
      border-bottom: 2px solid var(--orange);
  }
- 
+
  .navbar-afcic .dropdown-toggle::after {
      margin-left: .4em;
      vertical-align: .15em;
      transition: transform .25s ease;
  }
- 
+
  .navbar-afcic .dropdown-menu {
      border: none;
      border-top: 2px solid var(--orange);
@@ -124,6 +136,7 @@
      box-shadow: 0 16px 32px rgba(28, 36, 48, .12);
      padding: .5rem 0;
      margin-top: .5rem;
+     background: var(--paper);
  }
  
  .navbar-afcic .dropdown-item {
@@ -814,6 +827,19 @@
  
  .video-frame iframe {
      border: 0;
+     transition: filter .4s ease, opacity .4s ease;
+ }
+
+ /* Only the active slide's video is clear; inactive ones are dimmed/blurred */
+ .video-slider .carousel-item .video-frame {
+     filter: blur(2px);
+     opacity: .55;
+     transition: filter .4s ease, opacity .4s ease;
+ }
+
+ .video-slider .carousel-item.active .video-frame {
+     filter: none;
+     opacity: 1;
  }
  
  .video-caption {
@@ -1881,3 +1907,47 @@
      color: rgba(255, 255, 255, .75);
      margin-bottom: 1.15rem;
  }
+/* Video thumbnail with play button (iframe loads on click) */
+.video-thumb {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.video-thumb img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s ease;
+}
+
+.video-thumb:hover img {
+    transform: scale(1.03);
+}
+
+.video-thumb .play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: rgba(28, 36, 48, .75);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+    transition: background .3s ease, transform .3s ease;
+    z-index: 2;
+}
+
+.video-thumb:hover .play-btn,
+.video-thumb:focus-visible .play-btn {
+    background: rgba(28, 36, 48, .95);
+    transform: translate(-50%, -50%) scale(1.08);
+}

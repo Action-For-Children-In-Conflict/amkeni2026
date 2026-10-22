@@ -52,15 +52,16 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#focus" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">Our Focus Areas</a>
+                        <a class="nav-link dropdown-toggle" href="{{ route('programs') }}" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Our Programs</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="focus-child-protection.html">Child Protection</a></li>
-                            <li><a class="dropdown-item" href="focus-education-empowerment.html">Education
-                                    Empowerment</a></li>
-                            <li><a class="dropdown-item" href="focus-womens-empowerment.html">Women's Empowerment</a>
-                            </li>
-                            <li><a class="dropdown-item" href="focus-climate-change.html">Climate Change</a></li>
+                            <li><a class="dropdown-item" href="{{ route('programs') }}">All Programs</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            @forelse ($navPrograms as $navProgram)
+                                <li><a class="dropdown-item" href="{{ route('programs.show', $navProgram->slug) }}">{{ $navProgram->title }}</a></li>
+                            @empty
+                                <li><span class="dropdown-item text-muted">No programs yet</span></li>
+                            @endforelse
                         </ul>
                     </li>
 
@@ -68,8 +69,8 @@
                         <a class="nav-link dropdown-toggle" href="#centers" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">Our Centers</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="center-trc.html">Temporary Rescue Center</a></li>
-                            <li><a class="dropdown-item" href="center-wcc.html">Working Children Center</a></li>
+                            <li><a class="dropdown-item" href="{{ route('trc') }}">Temporary Rescue Center</a></li>
+                            <li><a class="dropdown-item" href="{{ route('wcc') }}">Working Children Center</a></li>
                         </ul>
                     </li>
 
@@ -77,10 +78,10 @@
                         <a class="nav-link dropdown-toggle" href="#stories" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">Be Informed</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#stories">Success Stories</a></li>
+                            <li><a class="dropdown-item" href="{{ route('stories') }}">Success Stories</a></li>
                             <li><a class="dropdown-item" href="#news">Events</a></li>
                             <li><a class="dropdown-item" href="#news">Reports</a></li>
-                            <li><a class="dropdown-item" href="#news">Blog</a></li>
+                            <li><a class="dropdown-item" href="{{ route('blogs') }}">Blog</a></li>
                         </ul>
                     </li>
 
@@ -196,7 +197,7 @@
             </div>
             <div class="footer-bottom pt-4 mt-4 d-flex flex-column flex-sm-row justify-content-between">
                 <span>© 2026 Action for Children in Conflict. All rights reserved.</span>
-                <span>Starter template — built for actionchildren.or.ke</span>
+                <span>Developed by MurimiCore Technlogies </span>
             </div>
         </div>
     </footer>
