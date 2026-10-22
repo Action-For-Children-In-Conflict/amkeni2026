@@ -79,8 +79,8 @@
                             aria-expanded="false">Be Informed</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('stories') }}">Success Stories</a></li>
+                            <li><a class="dropdown-item" href="{{ route('publication') }}">Publications</a></li>
                             <li><a class="dropdown-item" href="#news">Events</a></li>
-                            <li><a class="dropdown-item" href="#news">Reports</a></li>
                             <li><a class="dropdown-item" href="{{ route('blogs') }}">Blog</a></li>
                         </ul>
                     </li>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Partner;
 use App\Models\Program;
+use App\Models\Publication;
 use App\Models\Testmonial;
 
 class FrontendController extends Controller
@@ -50,6 +51,19 @@ class FrontendController extends Controller
         $blogs = Blog::with(['user', 'category'])->latest()->paginate(9);
 
         return view('frontend.indexes.blogIndex', compact('pageTitle', 'meta_description', 'blogs'));
+    }
+
+    /* All Publications Page */
+    public function publications()
+    {
+        $pageTitle = 'Publications';
+        $meta_description = 'Browse our publications, reports and resources on child protection, education, women\'s empowerment and climate action in Thika, Kenya.';
+        $publications = Publication::with(['user', 'category'])
+            ->where('is_published', true)
+            ->latest()
+            ->paginate(9);
+
+        return view('frontend.indexes.publicationIndex', compact('pageTitle', 'meta_description', 'publications'));
     }
 
     /* program detail Page */

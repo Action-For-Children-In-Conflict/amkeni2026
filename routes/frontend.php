@@ -32,4 +32,7 @@ Route::controller(FrontendController::class)->group(function () {
     Route::get('/blogs', 'blogsIndex')->name('blogs');
     Route::get('/blogs/{slug}', 'blog')->name('frontend.blogs.show');
 
+    // publications
+    Route::get('/publications', 'publications')->name('publication');
+
 });
