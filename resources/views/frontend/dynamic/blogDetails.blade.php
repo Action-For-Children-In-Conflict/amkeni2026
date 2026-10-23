@@ -16,12 +16,13 @@
                     <div class="article-meta"> &middot; Blog</div>
 
                     <div class="detail-body">
-                        {!! $blog->content !!}  
+                        {!! $blog->content !!}
+
+                        @include('frontend.inc.detailGallery', ['galleryImages' => $galleryImages ?? collect()])
 
 
-                       
                         <div class="donate-line">
-                            Donate $20 today at <a href="donate">Donate Here</a> to help fund our next programme.
+                            Donate $20 today at <a href="{{ route('donate') }}">Donate Here</a> to help fund our next programme.
                         </div>
 
                         <div class="article-byline">Story by the AfCiC Communications Team, Action for Children in Conflict

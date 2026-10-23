@@ -45,9 +45,9 @@
                             aria-expanded="false">About Us</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#about">About Us</a></li>
-                            <li><a class="dropdown-item" href="#">Our Team</a></li>
-                            <li><a class="dropdown-item" href="#partners">Our Partners</a></li>
-                            <li><a class="dropdown-item" href="#contact">Our Location</a></li>
+                            <li><a class="dropdown-item" href="{{ route('team') }}">Our Team</a></li>
+                            <li><a class="dropdown-item" href="{{ route('partners') }}">Our Partners</a></li>
+                            <li><a class="dropdown-item" href="{{ route('contact') }}">Our Location</a></li>
                         </ul>
                     </li>
 
@@ -80,13 +80,23 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('stories') }}">Success Stories</a></li>
                             <li><a class="dropdown-item" href="{{ route('publication') }}">Publications</a></li>
-                            <li><a class="dropdown-item" href="#news">Events</a></li>
+                            <li><a class="dropdown-item" href="{{ route('events') }}">Events</a></li>
                             <li><a class="dropdown-item" href="{{ route('blogs') }}">Blog</a></li>
                         </ul>
                     </li>
 
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0"><a class="btn-donate" href="#donate">Donate</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="{{ route('volunteer') }}" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Get Involved</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ route('volunteer') }}">Volunteer</a></li>
+                            <li><a class="dropdown-item" href="{{ route('partner') }}">Partner with us</a></li>
+                            <li><a class="dropdown-item" href="{{ route('contact') }}">Contact us</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0"><a class="btn-donate" href="{{ route('donate') }}">Donate</a></li>
                 </ul>
             </div>
         </div>
@@ -137,9 +147,9 @@
                 <div class="col-6 col-lg-2">
                     <h5>Get involved</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#donate">Donate</a></li>
-                        <li class="mb-2"><a href="#">Volunteer</a></li>
-                        <li class="mb-2"><a href="#">Partner with us</a></li>
+                        <li class="mb-2"><a href="{{ route('donate') }}">Donate</a></li>
+                        <li class="mb-2"><a href="{{ route('volunteer') }}">Volunteer</a></li>
+                        <li class="mb-2"><a href="{{ route('partner') }}">Partner with us</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4">

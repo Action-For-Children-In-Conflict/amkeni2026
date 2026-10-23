@@ -4,8 +4,8 @@ namespace App\Livewire\Events;
 
 use App\Models\Event;
 use App\Models\Tag;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -39,7 +39,7 @@ class Create extends Component
     {
         $this->validate();
 
-        $imagePath = $this->image_url->store('events', 'public');
+        $imagePath = $this->image_url?->store('events', 'public');
 
         Event::create([
             'title' => $this->title,
@@ -54,7 +54,8 @@ class Create extends Component
         ]);
 
         session()->flash('message', 'Event created successfully.');
-        return  $this->redirectRoute('admin.events.index',navigate:true);
+
+        return $this->redirectRoute('admin.events.index', navigate: true);
     }
 
     public function render()

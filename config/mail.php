@@ -115,4 +115,16 @@ return [
         'name' => env('MAIL_FROM_NAME', env('APP_NAME', 'Laravel')),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Contact Enquiries Recipient
+    |--------------------------------------------------------------------------
+    |
+    | Submissions from the contact, volunteer and partner pages are emailed
+    | to this address. Override it with CONTACT_RECIPIENT_EMAIL in .env.
+    |
+    */
+
+    'contact_recipient' => env('CONTACT_RECIPIENT_EMAIL', 'info@actionchildren.or.ke'),
+
 ];

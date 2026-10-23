@@ -21,6 +21,10 @@ Route::controller(FrontendController::class)->group(function () {
     Route::get('/working-children-center', 'wcc')->name('wcc');
 
     Route::get('/contact', 'contact')->name('contact');
+    Route::post('/contact', 'submitContact')->middleware('throttle:10,1')->name('contact.submit');
+
+    Route::get('/volunteer', 'volunteer')->name('volunteer');
+    Route::get('/partner-with-us', 'partner')->name('partner');
     // programs detail
     Route::get('programs/{slug}', 'allprograms')->name('programs.show');
     // stories index + detail
@@ -34,5 +38,14 @@ Route::controller(FrontendController::class)->group(function () {
 
     // publications
     Route::get('/publications', 'publications')->name('publication');
+
+    Route::get('/partners', 'partners')->name('partners');
+
+    Route::get('/our-team', 'team')->name('team');
+
+    Route::get('/donate', 'donate')->name('donate');
+
+    Route::get('/events', 'events')->name('events');
+    Route::get('/events/{slug}', 'event')->name('frontend.events.show');
 
 });

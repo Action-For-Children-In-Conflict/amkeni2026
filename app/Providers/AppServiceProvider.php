@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Partner;
 use App\Models\Program;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\Date;
@@ -27,11 +28,21 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->configureDefaults();
 
-        // Share all programs with every view (used by the navbar dropdown)
-        View::share('navPrograms', Program::query()
-            ->select('id', 'title', 'slug')
-            ->latest()
-            ->get());
+        // Share all programs with the frontend layout (used by the navbar dropdown)
+        View::composer('frontend.layouts.base', function ($view): void {
+            $view->with('navPrograms', Program::query()
+                ->select('id', 'title', 'slug')
+                ->latest()
+                ->get());
+        });
+
+        // Share the partner directory with the detail-page partner card
+        View::composer('frontend.inc.partnersCard', function ($view): void {
+            $view->with('partners', Partner::query()
+                ->select('id', 'name', 'website_url')
+                ->latest()
+                ->get());
+        });
     }
 
     /**

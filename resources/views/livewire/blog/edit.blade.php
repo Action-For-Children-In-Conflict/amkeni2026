@@ -91,5 +91,7 @@
                 </flux:button>
             </div>
         </form>
+
+        <livewire:gallery.manager type="blog" :id="$blog->id" />
     </flux:card>
 </div>

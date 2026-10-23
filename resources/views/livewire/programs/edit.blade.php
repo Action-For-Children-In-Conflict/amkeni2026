@@ -13,6 +13,13 @@
         </flux:field>
 
         <flux:field>
+            <flux:label>{{ __('Description') }}</flux:label>
+            <flux:textarea wire:model="description" rows="3"
+                placeholder="{{ __('Enter a short description for program listings') }}" />
+            <flux:error name="description" />
+        </flux:field>
+
+        <flux:field>
             <flux:label>{{ __('Tag') }}</flux:label>
             <flux:select wire:model="tag_id" placeholder="{{ __('Select a tag') }}">
                 @foreach ($tags as $tag)
@@ -102,4 +109,6 @@
             <flux:button type="submit" variant="primary" color="blue">{{ __('Update Program') }}</flux:button>
         </div>
     </form>
+
+    <livewire:gallery.manager type="program" :id="$program->id" />
 </div>

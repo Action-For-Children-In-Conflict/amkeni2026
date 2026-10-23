@@ -56,5 +56,7 @@
                 </flux:button>
             </div>
         </form>
+
+        <livewire:gallery.manager type="story" :id="$testmonial->id" />
     </flux:card>
 </div>

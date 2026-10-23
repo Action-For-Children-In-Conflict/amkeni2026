@@ -29,9 +29,9 @@
         </div>
 
         {{-- tag_id selection --}}
-        <flux:select label="Tag" wire:model="tag_id" placeholder="Select a category...">
+        <flux:select label="Tag" wire:model="tag_id" placeholder="Select a tag...">
             @foreach($tags as $tag)
-                <flux:select.option value="{{ $tag->id }}">{{ $tag->name }}</flux:select.option>
+                <flux:select.option value="{{ $tag->id }}">{{ $tag->title ?? $tag->name }}</flux:select.option>
             @endforeach
         </flux:select>
 

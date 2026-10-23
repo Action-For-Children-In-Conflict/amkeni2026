@@ -4,7 +4,7 @@ namespace App\Livewire\Programs;
 
 use App\Models\Program;
 use App\Models\Tag;
-use Illuminate\Support\Facades\Auth; 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -14,12 +14,18 @@ class Create extends Component
     use WithFileUploads;
 
     public $title = '';
+
+    public $description = '';
+
     public $tag_id = '';
+
     public $image = null;
+
     public $content = '';
 
     protected $rules = [
         'title' => 'required|string|max:255|unique:programs,title',
+        'description' => 'required|string|max:1000',
         'tag_id' => 'required|exists:tags,id',
         'image' => 'required|image|mimes:jpeg,jpg,png,webp|max:10240', // 10MB Max
         'content' => 'required|string',
@@ -33,6 +39,7 @@ class Create extends Component
 
         Program::create([
             'title' => $this->title,
+            'description' => $this->description,
             'slug' => Str::slug($this->title),
             'tag_id' => $this->tag_id,
             'user_id' => Auth::id(),

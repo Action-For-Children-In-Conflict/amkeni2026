@@ -59,8 +59,8 @@
                             <p class="lead mt-3">Every programme is built to empower children today and impact the
                                 community for generations to come.</p>
                             <div class="d-flex gap-3 mt-4 flex-wrap">
-                                <a href="#donate" class="btn-primary-afcic">Donate now</a>
-                                <a href="#donate" class="btn-outline-afcic">Donation causes</a>
+                                <a href="{{ route('donate') }}" class="btn-primary-afcic">Donate now</a>
+                                <a href="{{ route('donate') }}" class="btn-outline-afcic">Donation causes</a>
                             </div>
                         </div>
                     </div>

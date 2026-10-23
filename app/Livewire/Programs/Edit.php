@@ -17,6 +17,8 @@ class Edit extends Component
 
     public $title = '';
 
+    public $description = '';
+
     public $tag_id = '';
 
     public $image;
@@ -27,6 +29,7 @@ class Edit extends Component
     {
         $this->program = $program;
         $this->title = $program->title;
+        $this->description = $program->description;
         $this->tag_id = $program->tag_id;
         $this->content = $program->content;
     }
@@ -35,6 +38,7 @@ class Edit extends Component
     {
         return [
             'title' => 'required|string|max:255|unique:programs,title,'.$this->program->id,
+            'description' => 'required|string|max:1000',
             'tag_id' => 'required|exists:tags,id',
             'image' => 'nullable|image|mimes:jpeg,jpg,png,webp|max:10240',
             'content' => 'required|string',
@@ -54,6 +58,7 @@ class Edit extends Component
 
         $this->program->update([
             'title' => $this->title,
+            'description' => $this->description,
             'slug' => Str::slug($this->title),
             'tag_id' => $this->tag_id,
             'content' => $this->content,

@@ -31,6 +31,8 @@
 
                         <p>{!! $programdetail->content !!}</p>
 
+                        @include('frontend.inc.detailGallery', ['galleryImages' => $galleryImages ?? collect()])
+
                         {{--   <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1200&auto=format&fit=crop"
                             alt="Education empowerment programme activity" class="detail-image"> --}}
 
@@ -48,7 +50,7 @@
                             single institution's gate.</p> --}}
 
                         <div class="donate-line">
-                            Donate $20 today at <a href="index.html#donate">Donate Here</a> to help fund this programme.
+                            Donate $20 today at <a href="{{ route('donate') }}">Donate Here</a> to help fund this programme.
                         </div>
 
                         <div class="article-byline">Action for Children in Conflict (AfCiC), Thika, Kenya</div>

@@ -50,7 +50,7 @@
                             </div>
                         </div>
                         <div class="donate-line">
-                            Donate $20 today at <a href="index.html#donate">Donate Here</a> to help fund our next programme.
+                            Donate $20 today at <a href="{{ route('donate') }}">Donate Here</a> to help fund our next programme.
                         </div>
 
                         <div class="article-byline">Action for Children in Conflict (AfCiC), Thika, Kenya</div>

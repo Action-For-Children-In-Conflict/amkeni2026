@@ -25,8 +25,10 @@
                             }
                         </style>
                         <p>{!! $storydetail->content !!}</p>
-                       
-                 
+
+                        @include('frontend.inc.detailGallery', ['galleryImages' => $galleryImages ?? collect()])
+
+
                         <div class="pull-quote">&ldquo;Every time things got a little more stable, someone was still there
                             checking in.&rdquo;
                             <div
@@ -35,7 +37,7 @@
                             </div>
                         </div>
                         <div class="donate-line">
-                            Donate $20 today at <a href="donate">Donate Here</a> to help fund our next programme.
+                            Donate $20 today at <a href="{{ route('donate') }}">Donate Here</a> to help fund our next programme.
                         </div>
                         
                         <div class="article-byline">Story by the AfCiC Communications Team, Action for Children in Conflict
