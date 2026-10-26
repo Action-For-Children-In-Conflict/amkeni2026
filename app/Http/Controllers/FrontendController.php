@@ -8,16 +8,16 @@ use App\Mail\ContactSubmission;
 use App\Models\Blog;
 use App\Models\Contact;
 use App\Models\Event;
-use App\Models\Staff;
-use Illuminate\Support\Str;
 use App\Models\Partner;
 use App\Models\Program;
 use App\Models\Publication;
+use App\Models\Staff;
 use App\Models\Testmonial;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 use Illuminate\View\View;
 use Throwable;
 
@@ -27,7 +27,7 @@ class FrontendController extends Controller
     {
         $title = 'Action for Children in Conflict (AfCiC) — Thika, Kenya';
         $meta_description = "AfCiC protects and empowers children and vulnerable families in Thika, Kenya through child protection, education, women's empowerment and climate action.";
-        $programs = Program::with('tag')->latest()->paginate(4);
+        $programs = Program::with('tag')->oldest()->paginate(12);
         $testmonialstories = Testmonial::latest()->paginate(3);
         $partners = Partner::latest()->get();
         $blogs = Blog::latest()->paginate(6);
@@ -289,6 +289,33 @@ class FrontendController extends Controller
         $galleryImages = $blog->galleryImages;
 
         return view('frontend.dynamic.blogDetails', compact('pageTitle', 'meta_description', 'blog', 'recentPosts', 'recentPostsTitle', 'galleryImages'));
+    }
+
+    /* About Us Page */
+    public function about(): View
+    {
+        $pageTitle = 'About Us';
+        $meta_description = 'Learn about Action for Children in Conflict (AfCiC), our history, mission, vision and core values as we protect and empower children and families in Thika, Kenya.';
+
+        return view('frontend.static.about', compact('pageTitle', 'meta_description'));
+    }
+
+    /* Mission Page */
+    public function mission(): View
+    {
+        $pageTitle = 'Our Mission';
+        $meta_description = 'Read our mission statement: enhancing the growth of children, young people and their families through access to justice, education, health, psychosocial and economic support.';
+
+        return view('frontend.static.mission', compact('pageTitle', 'meta_description'));
+    }
+
+    /* Vision Page */
+    public function vision(): View
+    {
+        $pageTitle = 'Our Vision';
+        $meta_description = 'Our vision is a world of equal and sustainable opportunities for every child, regardless of where they were born or what they have been through.';
+
+        return view('frontend.static.vision', compact('pageTitle', 'meta_description'));
     }
 
     /* All Events Page */

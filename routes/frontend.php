@@ -9,6 +9,7 @@ Route::controller(FrontendController::class)->group(function () {
     Route::get('/', 'index')->name('home');
 
     Route::get('/about', 'about')->name('about');
+    Route::get('/about-us', 'about')->name('about.us');
     Route::get('/mission', 'mission')->name('mission');
     Route::get('/vision', 'vision')->name('vision');
 

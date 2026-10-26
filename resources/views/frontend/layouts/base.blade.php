@@ -41,10 +41,10 @@
                 <ul class="navbar-nav ms-auto align-items-lg-center">
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#about" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" href="{{ route('about') }}" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">About Us</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#about">About Us</a></li>
+                            <li><a class="dropdown-item" href="{{ route('about') }}">About Us</a></li>
                             <li><a class="dropdown-item" href="{{ route('team') }}">Our Team</a></li>
                             <li><a class="dropdown-item" href="{{ route('partners') }}">Our Partners</a></li>
                             <li><a class="dropdown-item" href="{{ route('contact') }}">Our Location</a></li>
