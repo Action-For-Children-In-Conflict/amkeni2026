@@ -37,11 +37,13 @@ jobs:
 
       # Composer's package:discover step and the front-end build expect an
       # application key. This .env is a throwaway build file and is deleted
-      # before anything is uploaded.
+      # before anything is uploaded. Generated with openssl because Composer
+      # has not installed vendor/ yet, so `artisan key:generate` cannot run.
       - name: Create build environment file
         run: |
           cp .env.example .env
-          php artisan key:generate --force
+          sed -i "s|^APP_KEY=.*|APP_KEY=base64:$(openssl rand -base64 32)|" .env
+          grep -q '^APP_KEY=base64:' .env || { echo 'APP_KEY was not generated'; exit 1; }
 
       - name: Install Composer dependencies
         run: composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
