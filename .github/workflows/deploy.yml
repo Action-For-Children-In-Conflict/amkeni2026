@@ -1,0 +1,93 @@
+name: Deploy to shared hosting
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Build and deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: bcmath, ctype, curl, dom, fileinfo, gd, intl, mbstring, openssl, pdo, pdo_mysql, pdo_sqlite, tokenizer, xml, zip
+          coverage: none
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      # Composer's package:discover step and the front-end build expect an
+      # application key. This .env is a throwaway build file and is deleted
+      # before anything is uploaded.
+      - name: Create build environment file
+        run: |
+          cp .env.example .env
+          php artisan key:generate --force
+
+      - name: Install Composer dependencies
+        run: composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+
+      - name: Build front-end assets
+        run: |
+          npm ci
+          npm run build
+
+      - name: Run test suite
+        run: php artisan test --compact
+
+      # Keep the upload small and make sure no local secrets or dev files reach
+      # the server. The server keeps its own .env, which is why it is removed.
+      # Root .htaccess makes public_html serve the application from public/.
+      - name: Prepare files for upload
+        run: |
+          rm -f .env public/hot
+          rm -rf node_modules tests .phpunit.cache
+          cp .github/deploy/root.htaccess .htaccess
+          find . -maxdepth 1 -name '*.sql' -delete
+          find storage/logs -name '*.log' -delete 2>/dev/null || true
+          find storage/framework/cache/data -mindepth 1 ! -name '.gitignore' -delete 2>/dev/null || true
+          find storage/framework/sessions -mindepth 1 ! -name '.gitignore' -delete 2>/dev/null || true
+          find storage/framework/views -mindepth 1 ! -name '.gitignore' -delete 2>/dev/null || true
+          mkdir -p bootstrap/cache storage/logs storage/framework/cache/data storage/framework/sessions storage/framework/views
+
+      - name: Deploy to public_html
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: 21
+          protocol: ftp
+          local-dir: ./
+          server-dir: /
+          exclude: |
+            .git/**
+            .github/**
+            node_modules/**
+            tests/**
+            .env
+            .env.*
+            public/hot
+            *.sql
+            .phpunit.cache/**
+            storage/logs/*.log
+            .ftp-deploy-sync-state.json

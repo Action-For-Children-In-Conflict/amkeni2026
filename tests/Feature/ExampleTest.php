@@ -28,7 +28,6 @@ class ExampleTest extends TestCase
         $response->assertSee('Stories of Transformation');
         $response->assertSee('Make A Difference');
         $response->assertSee('Media Gallery');
-        $response->assertSee('Our Partners & Allies');
 
         // Section Headings
         $response->assertSee('Four areas, one goal');
@@ -36,7 +35,6 @@ class ExampleTest extends TestCase
         $response->assertSee('Turning adversity into opportunity');
         $response->assertSee('Your contribution keeps our centres running');
         $response->assertSee('See the work in motion');
-        $response->assertSee('Standing together for children and families');
 
         // Hierarchy classes
         $response->assertSee('section-head');

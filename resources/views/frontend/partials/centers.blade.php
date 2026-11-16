@@ -2,7 +2,7 @@
 <section class="section-pad section-tint-orange" id="centers">
   <div class="container container-narrow">
     <div class="section-head">
-      <span class="section-eyebrow">Rescue & Rehabilitation</span>
+      <span class="section-eyebrow">Rescue &amp; Rehabilitation</span>
       <h2>Safe havens where hope and healing begin</h2>
       <hr class="rule">
       <p>Supporting street-connected children across Thika through emergency shelter, holistic care, and family reintegration.</p>

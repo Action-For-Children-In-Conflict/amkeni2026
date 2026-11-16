@@ -1,5 +1,19 @@
 <?php
 
+/*
+|--------------------------------------------------------------------------
+| Public disk location
+|--------------------------------------------------------------------------
+|
+| Hosts that only offer FTP cannot run `php artisan storage:link`. Set
+| PUBLIC_DISK_PATH to a folder inside the web root (for example
+| "public/storage") so uploaded files are served without a symlink.
+| Paths are resolved relative to the application root.
+|
+*/
+
+$publicDiskPath = env('PUBLIC_DISK_PATH') ?: 'storage/app/public';
+
 return [
 
     /*
@@ -40,7 +54,7 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'),
+            'root' => base_path($publicDiskPath),
             'url' => rtrim(env('APP_URL', 'http://localhost'), '/').'/storage',
             'visibility' => 'public',
             'throw' => false,
