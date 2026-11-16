@@ -1,95 +1,44 @@
-name: Deploy to shared hosting
+
+name: Laravel
 
 on:
   push:
-    branches: [main]
-  workflow_dispatch:
-
-concurrency:
-  group: production-deploy
-  cancel-in-progress: false
-
-permissions:
-  contents: read
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
 
 jobs:
-  deploy:
-    name: Build and deploy
+  laravel-tests:
+
     runs-on: ubuntu-latest
-    timeout-minutes: 90
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Set up PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.3'
-          extensions: bcmath, ctype, curl, dom, fileinfo, gd, intl, mbstring, openssl, pdo, pdo_mysql, pdo_sqlite, tokenizer, xml, zip
-          coverage: none
-
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: npm
-
-      # Composer's package:discover step and the front-end build expect an
-      # application key. This .env is a throwaway build file and is deleted
-      # before anything is uploaded. Generated with openssl because Composer
-      # has not installed vendor/ yet, so `artisan key:generate` cannot run.
-      - name: Create build environment file
-        run: |
-          cp .env.example .env
-          sed -i "s|^APP_KEY=.*|APP_KEY=base64:$(openssl rand -base64 32)|" .env
-          grep -q '^APP_KEY=base64:' .env || { echo 'APP_KEY was not generated'; exit 1; }
-
-      - name: Install Composer dependencies
-        run: composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
-
-      - name: Build front-end assets
-        run: |
-          npm ci
-          npm run build
-
-      - name: Run test suite
-        run: php artisan test --compact
-
-      # Keep the upload small and make sure no local secrets or dev files reach
-      # the server. The server keeps its own .env, which is why it is removed.
-      # Root .htaccess makes public_html serve the application from public/.
-      - name: Prepare files for upload
-        run: |
-          rm -f .env public/hot
-          rm -rf node_modules tests .phpunit.cache
-          cp .github/deploy/root.htaccess .htaccess
-          find . -maxdepth 1 -name '*.sql' -delete
-          find storage/logs -name '*.log' -delete 2>/dev/null || true
-          find storage/framework/cache/data -mindepth 1 ! -name '.gitignore' -delete 2>/dev/null || true
-          find storage/framework/sessions -mindepth 1 ! -name '.gitignore' -delete 2>/dev/null || true
-          find storage/framework/views -mindepth 1 ! -name '.gitignore' -delete 2>/dev/null || true
-          mkdir -p bootstrap/cache storage/logs storage/framework/cache/data storage/framework/sessions storage/framework/views
-
-      - name: Deploy to public_html
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
+    - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
+      with:
+        php-version: '8.3'
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v5
+      with:
+        node-version: 18
+    - run: npm ci
+    - name: Install Dependencies
+      run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+    - name: Directory Permissions
+      run: chmod -R 777 storage bootstrap/cache
+    - name: Create Database
+      run: |
+        mkdir -p database
+        touch database/database.sqlite
+    - name: Execute tests (Unit and Feature tests) via PHPUnit/Pest
+      env:
+        DB_CONNECTION: sqlite
+        DB_DATABASE: database/database.sqlite
+      run: |
+        npm run build
+    - name: Deploy to Server
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: 21
-          protocol: ftp
-          local-dir: ./
           server-dir: /
-          exclude: |
-            .git/**
-            .github/**
-            node_modules/**
-            tests/**
-            .env
-            .env.*
-            public/hot
-            *.sql
-            .phpunit.cache/**
-            storage/logs/*.log
-            .ftp-deploy-sync-state.json
