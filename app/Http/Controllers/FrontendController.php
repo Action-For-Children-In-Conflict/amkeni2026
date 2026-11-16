@@ -8,6 +8,7 @@ use App\Mail\ContactSubmission;
 use App\Models\Blog;
 use App\Models\Contact;
 use App\Models\Event;
+use App\Models\Job;
 use App\Models\Partner;
 use App\Models\Program;
 use App\Models\Publication;
@@ -64,6 +65,39 @@ class FrontendController extends Controller
         $blogs = Blog::with(['user', 'category'])->latest()->paginate(9);
 
         return view('frontend.indexes.blogIndex', compact('pageTitle', 'meta_description', 'blogs'));
+    }
+
+    /* All Careers Page (job openings) */
+    public function careers(): View
+    {
+        $pageTitle = 'Careers';
+        $meta_description = 'Explore job opportunities at Action for Children in Conflict (AfCiC) and join our team in Thika, Kenya.';
+        $jobs = Job::latest()->paginate(9);
+
+        return view('frontend.indexes.careersIndex', compact('pageTitle', 'meta_description', 'jobs'));
+    }
+
+    /* Career detail Page */
+    public function career(string $slug): View
+    {
+        $job = Job::where('slug', $slug)->firstOrFail();
+        $pageTitle = $job->title;
+        $meta_description = Str::limit(strip_tags($job->description), 160);
+
+        $recentPosts = Job::where('id', '!=', $job->id)
+            ->latest()
+            ->take(3)
+            ->get()
+            ->map(fn (Job $recentJob): array => [
+                'title' => $recentJob->title,
+                'url' => route('careers.show', $recentJob->slug),
+                'image' => $recentJob->image_url ? asset('storage/'.$recentJob->image_url) : null,
+                'meta' => $recentJob->created_at?->format('d M Y'),
+            ]);
+
+        $recentPostsTitle = 'Other Openings';
+
+        return view('frontend.dynamic.jobDetails', compact('pageTitle', 'meta_description', 'job', 'recentPosts', 'recentPostsTitle'));
     }
 
     /* All Publications Page */

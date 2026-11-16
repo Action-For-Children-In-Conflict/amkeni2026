@@ -62,6 +62,13 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
     Route::livewire('testmonials/{testmonial}', 'testmonials.edit')->name('admin.testmonials.edit');
 });
 
+/* admin routes for careers / jobs */
+Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
+    Route::livewire('jobs', 'jobs.index')->name('admin.jobs.index');
+    Route::livewire('jobs/create', 'jobs.create')->name('admin.jobs.create');
+    Route::livewire('jobs/{job}', 'jobs.edit')->name('admin.jobs.edit');
+});
+
 /* admin routes for contact enquiries */
 Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
     Route::livewire('enquiries', 'contacts.index')->name('admin.contacts.index');

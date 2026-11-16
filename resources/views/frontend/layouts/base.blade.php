@@ -110,6 +110,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('volunteer') }}">Volunteer</a></li>
                             <li><a class="dropdown-item" href="{{ route('partner') }}">Partner with us</a></li>
+                            <li><a class="dropdown-item" href="{{ route('careers') }}">Careers</a></li>
                             <li><a class="dropdown-item" href="{{ route('contact') }}">Contact us</a></li>
                         </ul>
                     </li>
@@ -168,7 +169,7 @@
                         <li class="mb-2"><a href="#about">Our story</a></li>
                         <li class="mb-2"><a href="#focus">Focus areas</a></li>
                         <li class="mb-2"><a href="#stories">Success stories</a></li>
-                        <li class="mb-2"><a href="#">Careers</a></li>
+                        <li class="mb-2"><a href="{{ route('careers') }}">Careers</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-lg-2">
@@ -177,6 +178,7 @@
                         <li class="mb-2"><a href="{{ route('donate') }}">Donate</a></li>
                         <li class="mb-2"><a href="{{ route('volunteer') }}">Volunteer</a></li>
                         <li class="mb-2"><a href="{{ route('partner') }}">Partner with us</a></li>
+                        <li class="mb-2"><a href="{{ route('careers') }}">Careers</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4">

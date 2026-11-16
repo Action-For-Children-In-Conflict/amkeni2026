@@ -55,6 +55,11 @@
                     <flux:sidebar.item icon="chat-bubble-left" :href="route('admin.testmonials.index')" :current="request()->routeIs('admin.testimonials.index')" wire:navigate>
                         {{ __('Success Stories') }}
                     </flux:sidebar.item>
+
+                    {{-- careers / jobs link--}}
+                    <flux:sidebar.item icon="briefcase" :href="route('admin.jobs.index')" :current="request()->routeIs('admin.jobs.*')" wire:navigate>
+                        {{ __('Careers') }}
+                    </flux:sidebar.item>
                     {{-- contact enquiries link --}}
                     <flux:sidebar.item icon="envelope" :href="route('admin.contacts.index')" :current="request()->routeIs('admin.contacts.index')" wire:navigate>
                         {{ __('Enquiries') }}

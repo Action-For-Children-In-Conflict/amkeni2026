@@ -5,6 +5,7 @@ namespace App\Livewire\Dashboard;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Event;
+use App\Models\Job;
 use App\Models\Membership;
 use App\Models\Partner;
 use App\Models\Program;
@@ -33,6 +34,7 @@ class Statistics extends Component
     {
         return [
             $this->statistic(__('Programs'), Program::class, 'play', 'admin.programs.index'),
+            $this->statistic(__('Jobs'), Job::class, 'briefcase', 'admin.jobs.index'),
             $this->statistic(__('Blog Posts'), Blog::class, 'newspaper', 'admin.blogs.index'),
             $this->statistic(__('Events'), Event::class, 'calendar', 'admin.events.index'),
             $this->statistic(__('Publications'), Publication::class, 'document-text', 'admin.publications.index'),

@@ -37,6 +37,10 @@ Route::controller(FrontendController::class)->group(function () {
     Route::get('/blogs', 'blogsIndex')->name('blogs');
     Route::get('/blogs/{slug}', 'blog')->name('frontend.blogs.show');
 
+    // careers
+    Route::get('/careers', 'careers')->name('careers');
+    Route::get('/careers/{slug}', 'career')->name('careers.show');
+
     // publications
     Route::get('/publications', 'publications')->name('publication');
 
