@@ -41,4 +41,20 @@ class ExampleTest extends TestCase
         $response->assertSee('section-eyebrow');
         $response->assertSee('rule');
     }
+
+    public function test_home_page_exposes_the_floating_translator_widget(): void
+    {
+        $response = $this->get(route('home'));
+
+        $response->assertOk();
+
+        $response->assertSee('class="translate-widget"', false);
+        $response->assertSee('id="translateToggle"', false);
+        $response->assertSee('id="translatePanel" hidden', false);
+        $response->assertSee('id="google_translate_element"', false);
+
+        // Google's script must stay wired to the init callback.
+        $response->assertSee('function googleTranslateElementInit', false);
+        $response->assertSee('translate.google.com/translate_a/element.js', false);
+    }
 }

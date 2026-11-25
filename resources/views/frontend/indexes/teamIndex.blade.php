@@ -27,7 +27,7 @@
                                 <p class="team-card-role">{{ $member->role }}</p>
                                 @if ($member->content)
                                     <div class="team-card-bio">
-                                        {!! $member->content !!}
+                                        {!! \App\Support\RichContent::render($member->content) !!}
                                     </div>
                                 @endif
                             </div>

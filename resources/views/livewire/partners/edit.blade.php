@@ -34,7 +34,7 @@
                 </div>
             </div>
 
-            <flux:textarea wire:model="content" :label="__('Description')" placeholder="Describe this partner..." rows="4" />
+            <x-quill-editor property="content" label="Description" />
 
             <div class="flex items-center gap-4">
                 <flux:button type="submit" variant="primary" color="blue" class="cursor-pointer">

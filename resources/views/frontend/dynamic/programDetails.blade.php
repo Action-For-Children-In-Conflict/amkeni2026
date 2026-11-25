@@ -20,16 +20,9 @@
                             <span class="label">Children sponsored this term</span>
                         </div> --}}
 
-                        <style>
-                            p>img {
-                                width: 100%;
-                                height: auto;
-                                margin: 0 auto;
-                            }
-                        </style>
-
-
-                        <p>{!! $programdetail->content !!}</p>
+                        <div class="rich-content">
+                            {!! \App\Support\RichContent::render($programdetail->content) !!}
+                        </div>
 
                         @include('frontend.inc.detailGallery', ['galleryImages' => $galleryImages ?? collect()])
 

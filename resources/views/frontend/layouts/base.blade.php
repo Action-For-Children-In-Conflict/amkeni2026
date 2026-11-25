@@ -4,11 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{-- meta tags  --}}
-    <meta name="title" content="Action for Children in Conflict (AfCiC) | Empowering Children and Communities in Kenya">
+    {{-- meta tags --}}
+    @php
+        $siteName = 'Action for Children in Conflict (AfCiC)';
+        $pageName = trim($metaTitle ?? $pageTitle ?? $title ?? '');
+        $documentTitle = $pageName === ''
+            ? $siteName.' | Empowering Children and Communities in Kenya'
+            : (str_contains($pageName, 'Action for Children in Conflict')
+                ? $pageName
+                : $pageName.' | '.$siteName);
+        $documentDescription = trim($meta_description ?? 'AfCiC protects and empowers children and vulnerable families in Thika, Kenya through child protection, education, women\'s empowerment and climate action.');
+    @endphp
 
-    <meta name="description"
-        content="Action for Children in Conflict (AfCiC) is a Kenyan NGO empowering vulnerable children, young people, women and families through child protection, education, health, gender equality and community development.">
+    <title>{{ $documentTitle }}</title>
+
+    <meta name="title" content="{{ $documentTitle }}">
+
+    <meta name="description" content="{{ $documentDescription }}">
 
     <meta name="keywords"
         content="Action for Children in Conflict, AfCiC Kenya, child protection Kenya, children's rights, NGO in Kenya, vulnerable children, street children ,rehabilitation, child sponsorship, education empowerment, women empowerment, gender equality, community development, climate change Kenya, legal aid Kenya, child welfare, Thika NGO, Kiambu County NGO">
@@ -23,12 +35,19 @@
 
 
     {{-- meta tags  --}}
-    {{-- favcons  --}}
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    {{-- end fsvcons --}}
+    {{-- favicons and pwa  --}}
+    <link rel="icon" href="{{ asset('favicon.ico') }}" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
+    <link rel="manifest" href="{{ asset('site.webmanifest') }}">
+    <meta name="theme-color" content="#24518f">
+    <meta name="application-name" content="AfCiC">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="AfCiC">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    {{-- end favicons and pwa --}}
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,10 +70,13 @@
     <!-- ================= NAVBAR ================= -->
     <nav class="navbar navbar-expand-lg navbar-afcic sticky-top">
         <div class="container container-narrow">
-            <a class="navbar-brand" href="{{ route('home') }}">
+            <a class="navbar-brand" href="{{ route('home') }}" aria-label="Action for Children in Conflict — home">
                 <img src="{{ asset('images/assets/logo.png') }}" alt="AfCiC logo" class="navbar-logo"
                     style="max-height: 38px; width: auto; object-fit: contain;">
-                <span>AfCi<span>C</span></span>
+                <span class="navbar-brand-name">
+                    <span>Action for Children</span>
+                    <span class="navbar-brand-name-accent">in Conflict</span>
+                </span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
                 <span class="navbar-toggler-icon"></span>
@@ -316,15 +338,98 @@
             }
         })();
     </script>
-    <div id="google_translate_element"></div>
+    {{-- Floating language switcher. The Google Translate gadget lives inside the
+         panel so it no longer sits as a stray block below the footer. --}}
+    <div class="translate-widget" id="translateWidget">
+        <div class="translate-widget-panel" id="translatePanel" hidden>
+            <div class="translate-widget-head">
+                <span class="translate-widget-title">Translate this page</span>
+                <button type="button" class="translate-widget-close" id="translateClose"
+                    aria-label="Close translator">&times;</button>
+            </div>
+            <div id="google_translate_element"></div>
+        </div>
+        <button type="button" class="translate-widget-toggle" id="translateToggle" aria-controls="translatePanel"
+            aria-expanded="false" aria-label="Translate this page">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M3 12h18"></path>
+                <path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z"></path>
+            </svg>
+            <span class="translate-widget-label">Translate</span>
+        </button>
+    </div>
     <script>
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
-                pageLanguage: 'en'
+                pageLanguage: 'en',
+                autoDisplay: false
             }, 'google_translate_element');
         }
+
+        // Toggle the translator panel. Kept dependency-free so it works even if
+        // Google's script is blocked by an ad blocker.
+        (function() {
+            var widget = document.getElementById('translateWidget');
+            var toggle = document.getElementById('translateToggle');
+            var panel = document.getElementById('translatePanel');
+            var close = document.getElementById('translateClose');
+
+            if (!widget || !toggle || !panel || !close) {
+                return;
+            }
+
+            function setOpen(open) {
+                panel.hidden = !open;
+                toggle.setAttribute('aria-expanded', String(open));
+
+                if (open) {
+                    var select = panel.querySelector('select');
+
+                    if (select) {
+                        select.focus();
+                    }
+                }
+            }
+
+            toggle.addEventListener('click', function() {
+                setOpen(panel.hidden);
+            });
+
+            close.addEventListener('click', function() {
+                setOpen(false);
+                toggle.focus();
+            });
+
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && !panel.hidden) {
+                    setOpen(false);
+                    toggle.focus();
+                }
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!panel.hidden && !widget.contains(event.target)) {
+                    setOpen(false);
+                }
+            });
+        })();
     </script>
     <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+        // Register the service worker so the public site can be installed and
+        // opened offline. Skipped on insecure origins (http) where it cannot run.
+        if ('serviceWorker' in navigator && window.isSecureContext) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('{{ asset('sw.js') }}', {
+                    scope: '/'
+                }).catch(function() {
+                    // Registration is optional; never block the page on failure.
+                });
+            });
+        }
+    </script>
 </body>
 
 </html>

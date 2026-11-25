@@ -10,18 +10,19 @@
 
                 <!-- main column -->
                 <div class="col-lg-8">
-                    <img src="{{ asset('storage/' . $job->image_url) }}" alt="{{ $job->title }}"
-                        class="article-cover">
+                    <img src="{{ asset('storage/' . $job->image_url) }}" alt="{{ $job->title }}" class="article-cover">
 
                     <h1 class="article-title">{{ $job->title }}</h1>
-                    <div class="article-meta">
+                   {{--  <div class="article-meta">
                         Careers &middot; {{ $job->created_at?->format('d M Y') }}
-                    </div>
+                    </div> --}}
 
                     <div class="detail-body">
                         <p class="lead">{{ $job->description }}</p>
 
-                        {!! $job->content !!}
+                        <div class="rich-content">
+                            {!! $job->content !!}
+                        </div>
 
                         @if ($job->hasDocument())
                             <div class="donate-line">

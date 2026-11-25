@@ -130,6 +130,29 @@ class JobTest extends TestCase
         Storage::disk('public')->assertMissing('jobs/documents/old.pdf');
     }
 
+    public function test_job_forms_share_the_same_rich_text_editor(): void
+    {
+        $user = User::factory()->create();
+        $job = Job::factory()->create(['content' => '<p>Existing content.</p>']);
+
+        $this->actingAs($user);
+
+        $createHtml = Livewire::test(Create::class)->html();
+        $editHtml = Livewire::test(Edit::class, ['job' => $job])->html();
+
+        foreach ([$createHtml, $editHtml] as $html) {
+            // Toolbar options that only the create form used to have.
+            $this->assertStringContainsString("['link', 'image', 'video']", $html);
+            $this->assertStringContainsString("'align'", $html);
+            $this->assertStringContainsString("'size'", $html);
+
+            // Both bind the editor to the Livewire property and hydrate it.
+            $this->assertStringContainsString(".entangle('content')", $html);
+            $this->assertStringContainsString('quill.root.innerHTML = content', $html);
+            $this->assertStringContainsString("quill.on('text-change'", $html);
+        }
+    }
+
     public function test_admin_can_delete_a_job(): void
     {
         $user = User::factory()->create();

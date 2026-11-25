@@ -16,7 +16,9 @@
                     <div class="article-meta"> &middot; Blog</div>
 
                     <div class="detail-body">
-                        {!! $blog->content !!}
+                        <div class="rich-content">
+                            {!! \App\Support\RichContent::render($blog->content) !!}
+                        </div>
 
                         @include('frontend.inc.detailGallery', ['galleryImages' => $galleryImages ?? collect()])
 

@@ -82,6 +82,7 @@ class FrontendController extends Controller
     {
         $job = Job::where('slug', $slug)->firstOrFail();
         $pageTitle = $job->title;
+        $metaTitle = $job->title;
         $meta_description = Str::limit(strip_tags($job->description), 160);
 
         $recentPosts = Job::where('id', '!=', $job->id)
@@ -97,7 +98,7 @@ class FrontendController extends Controller
 
         $recentPostsTitle = 'Other Openings';
 
-        return view('frontend.dynamic.jobDetails', compact('pageTitle', 'meta_description', 'job', 'recentPosts', 'recentPostsTitle'));
+        return view('frontend.dynamic.jobDetails', compact('pageTitle', 'metaTitle', 'meta_description', 'job', 'recentPosts', 'recentPostsTitle'));
     }
 
     /* All Publications Page */
@@ -119,6 +120,8 @@ class FrontendController extends Controller
         $pageTitle = 'Afcic Progams';
         // dd($slug);
         $programdetail = Program::where('slug', $slug)->firstOrFail();
+        $metaTitle = $programdetail->title;
+        $meta_description = Str::limit(strip_tags($programdetail->content), 160);
 
         $recentPosts = Program::where('id', '!=', $programdetail->id)
             ->latest()
@@ -134,7 +137,7 @@ class FrontendController extends Controller
         $recentPostsTitle = 'Recent Programs';
         $galleryImages = $programdetail->galleryImages;
 
-        return view('frontend.dynamic.programDetails', compact('pageTitle', 'programdetail', 'recentPosts', 'recentPostsTitle', 'galleryImages'));
+        return view('frontend.dynamic.programDetails', compact('pageTitle', 'metaTitle', 'meta_description', 'programdetail', 'recentPosts', 'recentPostsTitle', 'galleryImages'));
     }
 
     /* stories Page */
@@ -143,12 +146,14 @@ class FrontendController extends Controller
         $pageTitle = 'Success Stories';
         // dd($slug);
         $storydetail = Testmonial::where('slug', $slug)->firstOrFail();
+        $metaTitle = $storydetail->position ?: $storydetail->name;
+        $meta_description = Str::limit(strip_tags($storydetail->content), 160);
 
         $recentPosts = $this->recentStories($storydetail->id);
         $recentPostsTitle = 'Recent Stories';
         $galleryImages = $storydetail->galleryImages;
 
-        return view('frontend.dynamic.storiesDetails', compact('pageTitle', 'storydetail', 'recentPosts', 'recentPostsTitle', 'galleryImages'));
+        return view('frontend.dynamic.storiesDetails', compact('pageTitle', 'metaTitle', 'meta_description', 'storydetail', 'recentPosts', 'recentPostsTitle', 'galleryImages'));
     }
 
     /* CENTERS
@@ -306,6 +311,7 @@ class FrontendController extends Controller
     {
         $blog = Blog::where('slug', $slug)->firstOrFail();
         $pageTitle = 'Afcic articles & Blogs';
+        $metaTitle = $blog->title;
         $meta_description = $blog->title;
 
         $recentPosts = Blog::where('id', '!=', $blog->id)
@@ -322,7 +328,7 @@ class FrontendController extends Controller
         $recentPostsTitle = 'Recent Posts';
         $galleryImages = $blog->galleryImages;
 
-        return view('frontend.dynamic.blogDetails', compact('pageTitle', 'meta_description', 'blog', 'recentPosts', 'recentPostsTitle', 'galleryImages'));
+        return view('frontend.dynamic.blogDetails', compact('pageTitle', 'metaTitle', 'meta_description', 'blog', 'recentPosts', 'recentPostsTitle', 'galleryImages'));
     }
 
     /* About Us Page */
@@ -370,6 +376,7 @@ class FrontendController extends Controller
     {
         $event = Event::where('slug', $slug)->firstOrFail();
         $pageTitle = $event->title;
+        $metaTitle = $event->title;
         $meta_description = Str::limit(strip_tags($event->content), 160);
         $galleryImages = $event->galleryImages;
 
@@ -386,7 +393,7 @@ class FrontendController extends Controller
 
         $recentPostsTitle = 'Recent Events';
 
-        return view('frontend.dynamic.eventDetails', compact('pageTitle', 'meta_description', 'event', 'galleryImages', 'recentEvents', 'recentPostsTitle'));
+        return view('frontend.dynamic.eventDetails', compact('pageTitle', 'metaTitle', 'meta_description', 'event', 'galleryImages', 'recentEvents', 'recentPostsTitle'));
     }
 
     /**

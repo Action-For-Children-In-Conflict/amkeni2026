@@ -30,14 +30,9 @@
                     </div>
 
                     <div class="detail-body">
-                        <style>
-                            p>img {
-                                width: 100%;
-                                height: auto;
-                                margin: 0 auto;
-                            }
-                        </style>
-                        {!! $event->content !!}
+                        <div class="rich-content">
+                            {!! \App\Support\RichContent::render($event->content) !!}
+                        </div>
 
                         @include('frontend.inc.detailGallery', ['galleryImages' => $galleryImages ?? collect()])
 

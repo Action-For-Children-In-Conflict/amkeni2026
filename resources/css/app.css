@@ -55,6 +55,25 @@
     @apply  !mb-0 !leading-tight;
 }
 
+/* Rich-text editor: keep media inside the editing area instead of
+   letting large images stretch the whole admin form. */
+.quill-editor .ql-editor img {
+    max-width: 100%;
+    max-height: 340px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: .5rem;
+    margin: .5rem 0;
+}
+
+.quill-editor .ql-editor iframe,
+.quill-editor .ql-editor video {
+    max-width: 100%;
+    max-height: 340px;
+    border-radius: .5rem;
+}
+
 input:focus[data-flux-control],
 textarea:focus[data-flux-control],
 select:focus[data-flux-control] {

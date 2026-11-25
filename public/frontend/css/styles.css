@@ -95,6 +95,39 @@
  .navbar-afcic .navbar-brand span {
      color: var(--orange);
  }
+
+ /* Full organisation name stacked in two lines so it fits inside the navbar
+    without widening it enough to squeeze the menu. */
+ .navbar-afcic .navbar-brand-name {
+     display: inline-flex;
+     flex-direction: column;
+     justify-content: center;
+     font-family: 'Fraunces', serif;
+     font-size: 0.8rem;
+     font-weight: 700;
+     line-height: 1.18;
+     letter-spacing: 0.045em;
+     text-transform: uppercase;
+     color: #fff;
+     white-space: nowrap;
+ }
+
+ .navbar-afcic .navbar-brand .navbar-brand-name span {
+     color: #fff;
+ }
+
+ .navbar-afcic .navbar-brand .navbar-brand-name .navbar-brand-name-accent {
+     color: var(--orange);
+ }
+
+ /* Laptop widths are the only band where the menu is tight, so the lockup
+    drops a notch to keep every item on one row. */
+ @media (min-width: 992px) and (max-width: 1199.98px) {
+     .navbar-afcic .navbar-brand-name {
+         font-size: 0.62rem;
+         letter-spacing: 0.02em;
+     }
+ }
  /* ---- Toggler (hamburger) ---- */
  
  .navbar-afcic .navbar-toggler {
@@ -150,6 +183,15 @@
  .navbar-afcic .dropdown-item:focus {
      background: rgba(255, 255, 255, .08);
      color: #fff;
+ }
+
+ /* Laptop widths: tighten the menu so the full brand name stays on one row
+    with every nav item. Placed after the base rules on purpose. */
+ @media (min-width: 992px) and (max-width: 1199.98px) {
+     .navbar-afcic .navbar-nav .nav-link {
+         margin: 0 0.3rem;
+         font-size: 0.92rem;
+     }
  }
  /* ---- Mobile (< 992px) ---- */
  
@@ -1626,6 +1668,315 @@
  .detail-body strong {
      color: var(--ink);
  }
+
+ /* ================= RICH TEXT (Quill output on the front end) ================= */
+
+ .rich-content {
+     color: #4b5563;
+     font-size: 1.03rem;
+     line-height: 1.8;
+     overflow-wrap: break-word;
+ }
+
+ .rich-content>*:first-child {
+     margin-top: 0;
+ }
+
+ .rich-content>*:last-child {
+     margin-bottom: 0;
+ }
+
+ .rich-content p {
+     margin: 0 0 1.3rem;
+ }
+
+ .rich-content h1,
+ .rich-content h2,
+ .rich-content h3,
+ .rich-content h4,
+ .rich-content h5,
+ .rich-content h6 {
+     font-family: 'Fraunces', serif;
+     font-weight: 700;
+     line-height: 1.3;
+     color: var(--blue-deep);
+     margin: 2rem 0 .85rem;
+ }
+
+ .rich-content h1 {
+     font-size: 1.7rem;
+ }
+
+ .rich-content h2 {
+     font-size: 1.4rem;
+ }
+
+ .rich-content h3 {
+     font-size: 1.2rem;
+ }
+
+ .rich-content h4 {
+     font-size: 1.06rem;
+ }
+
+ .rich-content h5 {
+     font-size: .98rem;
+ }
+
+ .rich-content h6 {
+     font-size: .82rem;
+     letter-spacing: .08em;
+     text-transform: uppercase;
+     color: #5b6472;
+ }
+
+ .rich-content a {
+     color: var(--blue-deep);
+     font-weight: 600;
+     text-decoration: underline;
+     text-decoration-thickness: 1px;
+     text-underline-offset: 3px;
+     overflow-wrap: anywhere;
+     cursor: pointer;
+ }
+
+ .rich-content a:hover,
+ .rich-content a:focus-visible {
+     color: var(--orange-deep);
+     text-decoration-thickness: 2px;
+ }
+
+ .rich-content strong,
+ .rich-content b {
+     color: var(--ink);
+     font-weight: 700;
+ }
+
+ .rich-content ul,
+ .rich-content ol {
+     margin: 0 0 1.4rem;
+     padding-left: 1.4rem;
+ }
+
+ .rich-content li {
+     margin-bottom: .5rem;
+ }
+
+ .rich-content li::marker {
+     color: var(--orange-deep);
+ }
+
+ .rich-content li>ul,
+ .rich-content li>ol {
+     margin: .5rem 0 0;
+ }
+
+ .rich-content blockquote {
+     margin: 1.8rem 0;
+     padding: .85rem 1.25rem;
+     border-left: 3px solid var(--orange);
+     border-radius: 0 10px 10px 0;
+     background: rgba(255, 145, 77, .07);
+     font-family: 'Fraunces', serif;
+     font-size: 1.1rem;
+     font-style: italic;
+     line-height: 1.7;
+     color: #33415c;
+ }
+
+ .rich-content blockquote p:last-child {
+     margin-bottom: 0;
+ }
+
+ .rich-content hr {
+     margin: 2.2rem 0;
+     border: 0;
+     border-top: 1px solid var(--line);
+ }
+
+ .rich-content img {
+     display: block;
+     width: auto;
+     max-width: 100%;
+     max-height: 520px;
+     height: auto;
+     object-fit: contain;
+     margin: 1.6rem auto;
+     border-radius: 12px;
+ }
+
+ /* Pasted images sometimes carry fixed width/height attributes. */
+ .rich-content img[width],
+ .rich-content img[height] {
+     width: auto !important;
+     height: auto !important;
+ }
+
+ .rich-content iframe,
+ .rich-content video {
+     display: block;
+     width: 100%;
+     max-width: 100%;
+     aspect-ratio: 16 / 9;
+     height: auto;
+     margin: 1.6rem auto;
+     border: 0;
+     border-radius: 12px;
+     background: #000;
+ }
+
+ .rich-content table {
+     width: 100%;
+     margin: 1.6rem 0;
+     border-collapse: collapse;
+     font-size: .95rem;
+ }
+
+ .rich-content th,
+ .rich-content td {
+     padding: .6rem .8rem;
+     border: 1px solid var(--line);
+     text-align: left;
+     vertical-align: top;
+ }
+
+ .rich-content th {
+     background: var(--paper-dim);
+     color: var(--blue-deep);
+     font-weight: 700;
+ }
+
+ .rich-content pre {
+     margin: 1.6rem 0;
+     padding: 1rem 1.15rem;
+     border-radius: 10px;
+     background: #1c2430;
+     color: #f2f0ea;
+     font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+     font-size: .88rem;
+     line-height: 1.65;
+     overflow-x: auto;
+     white-space: pre-wrap;
+ }
+
+ .rich-content code {
+     padding: .15em .4em;
+     border-radius: 4px;
+     background: var(--paper-dim);
+     color: #a8410f;
+     font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+     font-size: .9em;
+ }
+
+ .rich-content pre code {
+     padding: 0;
+     background: transparent;
+     color: inherit;
+     font-size: inherit;
+ }
+
+ /* Quill's own formatting classes, reproduced for the published page. */
+ .rich-content .ql-align-center {
+     text-align: center;
+ }
+
+ .rich-content .ql-align-right {
+     text-align: right;
+ }
+
+ .rich-content .ql-align-justify {
+     text-align: justify;
+ }
+
+ .rich-content .ql-indent-1 {
+     padding-left: 1.5rem;
+ }
+
+ .rich-content .ql-indent-2 {
+     padding-left: 3rem;
+ }
+
+ .rich-content .ql-indent-3 {
+     padding-left: 4.5rem;
+ }
+
+ .rich-content .ql-indent-4 {
+     padding-left: 6rem;
+ }
+
+ .rich-content .ql-indent-5 {
+     padding-left: 7.5rem;
+ }
+
+ .rich-content .ql-indent-6 {
+     padding-left: 9rem;
+ }
+
+ .rich-content .ql-indent-7 {
+     padding-left: 10.5rem;
+ }
+
+ .rich-content .ql-indent-8 {
+     padding-left: 12rem;
+ }
+
+ .rich-content .ql-size-small {
+     font-size: .85em;
+ }
+
+ .rich-content .ql-size-large {
+     font-size: 1.2em;
+ }
+
+ .rich-content .ql-size-huge {
+     font-size: 1.5em;
+ }
+
+ .rich-content .ql-font-serif {
+     font-family: 'Fraunces', serif;
+ }
+
+ .rich-content .ql-font-monospace {
+     font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+ }
+
+ .rich-content .ql-direction-rtl {
+     direction: rtl;
+     text-align: inherit;
+ }
+
+ .rich-content blockquote.ql-direction-rtl {
+     border-left: 0;
+     border-right: 3px solid var(--orange);
+     border-radius: 10px 0 0 10px;
+ }
+
+ @media (max-width: 575.98px) {
+     .rich-content {
+         font-size: 1rem;
+     }
+
+     .rich-content h1 {
+         font-size: 1.4rem;
+     }
+
+     .rich-content h2 {
+         font-size: 1.25rem;
+     }
+
+     .rich-content h3 {
+         font-size: 1.1rem;
+     }
+
+     .rich-content blockquote {
+         padding: .75rem 1rem;
+         font-size: 1rem;
+     }
+
+     .rich-content img {
+         max-height: 320px;
+     }
+ }
  
  .detail-list {
      list-style: none;
@@ -2499,6 +2850,108 @@ a.enquiry-detail-value:hover {
     overflow: visible;
 }
 
+/* Compact typography for editor output shown inside the team cards. */
+.team-card-bio>*:first-child {
+    margin-top: 0;
+}
+
+.team-card-bio>*:last-child {
+    margin-bottom: 0;
+}
+
+.team-card-bio p {
+    margin: 0 0 0.7rem;
+}
+
+.team-card-bio h1,
+.team-card-bio h2,
+.team-card-bio h3,
+.team-card-bio h4,
+.team-card-bio h5,
+.team-card-bio h6 {
+    font-family: 'Fraunces', serif;
+    font-size: 0.98rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--blue-deep);
+    margin: 0.9rem 0 0.4rem;
+}
+
+.team-card-bio ul,
+.team-card-bio ol {
+    margin: 0 0 0.7rem;
+    padding-left: 1.15rem;
+}
+
+.team-card-bio li {
+    margin-bottom: 0.3rem;
+}
+
+.team-card-bio li::marker {
+    color: var(--orange-deep);
+}
+
+.team-card-bio a {
+    color: var(--blue-deep);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+}
+
+.team-card-bio a:hover,
+.team-card-bio a:focus-visible {
+    color: var(--orange-deep);
+}
+
+.team-card-bio strong,
+.team-card-bio b {
+    color: var(--ink);
+    font-weight: 700;
+}
+
+.team-card-bio img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    max-height: 200px;
+    height: auto;
+    object-fit: contain;
+    margin: 0.8rem auto;
+    border-radius: 10px;
+}
+
+.team-card-bio img[width],
+.team-card-bio img[height] {
+    width: auto !important;
+    height: auto !important;
+}
+
+.team-card-bio iframe,
+.team-card-bio video {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    margin: 0.8rem auto;
+    border: 0;
+    border-radius: 10px;
+}
+
+.team-card-bio blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 0.85rem;
+    border-left: 2px solid var(--orange);
+    border-radius: 0 8px 8px 0;
+    background: rgba(255, 145, 77, 0.07);
+    font-family: 'Fraunces', serif;
+    font-size: 0.9rem;
+    font-style: italic;
+    line-height: 1.65;
+}
+
 .team-empty {
     padding: 2.5rem;
     border-radius: 16px;
@@ -2672,5 +3125,194 @@ a.enquiry-detail-value:hover {
 
     .about-text-card {
         padding: 1.8rem;
+    }
+}
+
+/* ================= FLOATING TRANSLATOR (Google Translate) ================= */
+
+.translate-widget {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 1045;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+}
+
+.translate-widget-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.2rem;
+    border: 0;
+    border-radius: 999px;
+    background: var(--blue-deep);
+    color: #fff;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 14px 32px rgba(36, 81, 143, 0.34);
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.translate-widget-toggle:hover,
+.translate-widget-toggle:focus-visible {
+    background: #1b3d6d;
+    transform: translateY(-2px);
+    box-shadow: 0 18px 38px rgba(36, 81, 143, 0.42);
+}
+
+.translate-widget-toggle:focus-visible {
+    outline: 2px solid var(--orange);
+    outline-offset: 3px;
+}
+
+.translate-widget-panel {
+    width: min(20rem, calc(100vw - 2.5rem));
+    padding: 0.9rem 1rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 20px 50px rgba(28, 36, 48, 0.2);
+    animation: translate-widget-in 0.18s ease-out;
+}
+
+.translate-widget-panel[hidden] {
+    display: none;
+}
+
+@keyframes translate-widget-in {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .translate-widget-panel {
+        animation: none;
+    }
+
+    .translate-widget-toggle,
+    .translate-widget-toggle:hover {
+        transform: none;
+    }
+}
+
+.translate-widget-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+}
+
+.translate-widget-title {
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--blue-deep);
+}
+
+.translate-widget-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.6rem;
+    height: 1.6rem;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--paper-dim);
+    color: var(--ink);
+    font-size: 1.05rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.translate-widget-close:hover,
+.translate-widget-close:focus-visible {
+    background: #e6e2d8;
+}
+
+.translate-widget-close:focus-visible {
+    outline: 2px solid var(--orange);
+    outline-offset: 2px;
+}
+
+/* The Google gadget itself: keep the branding visible, just make it fit. */
+#google_translate_element .goog-te-gadget {
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif !important;
+    font-size: 0.8rem !important;
+    color: #5b6472 !important;
+}
+
+#google_translate_element .goog-te-gadget-simple {
+    width: 100%;
+    padding: 0;
+    border: 0 !important;
+    background: transparent !important;
+}
+
+#google_translate_element select.goog-te-combo {
+    width: 100%;
+    padding: 0.55rem 0.65rem;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--ink);
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 0.88rem;
+}
+
+#google_translate_element select.goog-te-combo:focus-visible {
+    outline: 2px solid var(--orange);
+    outline-offset: 2px;
+}
+
+#google_translate_element .goog-logo-link img {
+    opacity: 0.85;
+}
+
+/* Google injects a top banner and tooltips that shift the page and get in the
+   way of the sticky navbar. The gadget inside the panel keeps the branding. */
+body {
+    top: 0 !important;
+}
+
+.goog-te-banner-frame,
+.goog-te-balloon-frame,
+#goog-gt-tt,
+.goog-tooltip {
+    display: none !important;
+}
+
+@media (max-width: 575.98px) {
+    .translate-widget {
+        right: 0.9rem;
+        bottom: 0.9rem;
+    }
+
+    .translate-widget-label {
+        display: none;
+    }
+
+    .translate-widget-toggle {
+        width: 3.1rem;
+        height: 3.1rem;
+        padding: 0;
+        justify-content: center;
     }
 }

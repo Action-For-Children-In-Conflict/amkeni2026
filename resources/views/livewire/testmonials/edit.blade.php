@@ -45,7 +45,7 @@
             @endif
 
             {{-- Testimonial Content --}}
-            <flux:textarea wire:model="content" :label="__('Testimonial')" placeholder="Enter the testimonial quote (20-1000 characters)" rows="5" />
+            <x-quill-editor property="content" label="Testimonial" />
 
             <div class="flex items-center gap-4">
                 <flux:button type="submit" variant="primary" color="blue" class="cursor-pointer">

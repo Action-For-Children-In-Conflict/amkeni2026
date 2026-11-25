@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You are offline | AfCiC</title>
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#24518f">
+    <style>
+        :root {
+            --blue-deep: #24518f;
+            --orange: #ff914d;
+            --ink: #1c2430;
+            --paper: #fbfaf7;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+            color: var(--ink);
+            background: var(--paper);
+        }
+
+        .card {
+            width: 100%;
+            max-width: 460px;
+            text-align: center;
+            background: #fff;
+            border-radius: 16px;
+            padding: 48px 32px;
+            box-shadow: 0 18px 50px rgba(28, 36, 48, .12);
+        }
+
+        img {
+            max-height: 44px;
+            width: auto;
+            margin-bottom: 28px;
+        }
+
+        h1 {
+            font-size: 26px;
+            line-height: 1.25;
+            margin: 0 0 12px;
+            color: var(--blue-deep);
+        }
+
+        p {
+            margin: 0 0 28px;
+            line-height: 1.6;
+            color: #4b5563;
+        }
+
+        button {
+            font: inherit;
+            font-weight: 600;
+            cursor: pointer;
+            border: 0;
+            border-radius: 999px;
+            padding: 13px 32px;
+            color: #fff;
+            background: var(--orange);
+            transition: background .2s ease;
+        }
+
+        button:hover {
+            background: #e5762f;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="card">
+        <img src="/images/assets/logo.png" alt="Action for Children in Conflict">
+        <h1>You are offline</h1>
+        <p>Check your internet connection and try again. Pages you have already visited may still be available.</p>
+        <button type="button" onclick="window.location.reload()">Try again</button>
+    </main>
+</body>
+
+</html>

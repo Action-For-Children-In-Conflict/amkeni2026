@@ -46,47 +46,7 @@
 
             {{-- Content --}}
             <div>
-                <flux:field>
-                    <flux:label>{{ __('Content') }}</flux:label>
-                    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet" />
-                    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
-                    <div wire:ignore x-data="{
-                        content: @entangle('content'),
-                        quill: null
-                    }" x-init="quill = new Quill($refs.editor, {
-                        theme: 'snow',
-                        modules: {
-                            toolbar: [
-                                ['bold', 'italic', 'underline', 'strike'],
-                                ['blockquote', 'code-block'],
-                                [{ 'header': 1 }, { 'header': 2 }],
-                                [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-                                [{ 'indent': '-1' }, { 'indent': '+1' }],
-                                [{ 'size': ['small', false, 'large', 'huge'] }],
-                                [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-                                [{ 'color': [] }, { 'background': [] }],
-                                [{ 'align': [] }],
-                                ['clean'],
-                                ['link', 'image', 'video']
-                            ]
-                        }
-                    });
-                    quill.root.innerHTML = content;
-                    quill.on('text-change', () => {
-                        content = quill.root.innerHTML;
-                    });
-                    $watch('content', (value) => {
-                        if (value !== quill.root.innerHTML) {
-                            quill.root.innerHTML = value;
-                        }
-                    });">
-                        <div x-ref="editor"
-                            class="min-h-[300px] bg-white dark:bg-zinc-100 text-zinc-900 dark:text-zinc-50 rounded-md border border-zinc-200 dark:border-zinc-700 shadow-sm">
-                        </div>
-                    </div>
-
-                    <flux:error name="content" />
-                </flux:field>
+                <x-quill-editor property="content" />
             </div>
 
             <div class="flex items-center gap-4">

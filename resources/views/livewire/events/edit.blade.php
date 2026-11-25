@@ -7,7 +7,7 @@
     <form wire:submit="update" class="space-y-6">
         <flux:input label="Title" wire:model="title" placeholder="Event title..." />
 
-        <flux:textarea label="Content" wire:model="content" placeholder="Describe what this event is about..." />
+        <x-quill-editor property="content" />
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <flux:input type="date" label="Date" wire:model="date" />
